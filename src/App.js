@@ -1,13 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-import FlightQueryCaller from './FlightQueryCaller';
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Login from './components/Login'
+import Register from './components/Register' 
+import Dashboard from './components/Dashboard'
 
-function App() {
-  return (
-    <div className="App">
-      <FlightQueryCaller />
-    </div>
-  );
+const App = () => {
+	return (
+		<div>
+			<BrowserRouter>
+                <Routes> 
+                    <Route path="/login" element={<Login/>} />
+                    <Route path="/register" element={<Register/>} />
+                     <Route path="/dashboard" element={<Dashboard/>} />
+                </Routes>
+			</BrowserRouter>
+		</div>
+	)
 }
 
-export default App;
+export default App
