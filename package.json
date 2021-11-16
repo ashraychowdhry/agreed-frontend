@@ -6,6 +6,7 @@
     "@duffel/api": "^1.4.0",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
+    "@materials-ui/core": "^0.0.27",
     "axios": "^0.24.0",
     "cra-template": "1.1.2",
     "duffel": "^0.0.2",

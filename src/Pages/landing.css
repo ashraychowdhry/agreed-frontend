@@ -3,4 +3,19 @@
     url("../assets/landing-background.jpeg");
   height: 100vh;
   padding: 0;
+  align-items: center;
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.title {
+  font-size: 90px;
+  font-weight: bold;
+  padding-top: 80px;
+}
+
+.subtitle {
+  font-size: 30px;
+  font-weight: bold;
 }

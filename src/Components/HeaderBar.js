@@ -9,7 +9,7 @@ function HeaderBar() {
         <div className='container'>
             
 
-            <nav className="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+            <nav className="navbar navbar-expand-lg navbar-light fixed-top">
             .<div className="container">
 
 
@@ -25,6 +25,12 @@ function HeaderBar() {
                     </li>
                     <li className="nav-item">
                         <Link to='/aboutus' className="nav-link" >About the Team</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to='/login' className="nav-link" >Login</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to='/register' className="nav-link" >Register</Link>
                     </li>
                     
                 </ul>
