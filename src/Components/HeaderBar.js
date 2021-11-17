@@ -4,9 +4,10 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
 
+
 function HeaderBar() {
     return (
-        <div className='container' style={{padding: '40px'}}>
+        <div className='container' style={{padding: '20px'}}>
             
 
             <nav className="navbar navbar-expand-lg navbar-light fixed-top">
