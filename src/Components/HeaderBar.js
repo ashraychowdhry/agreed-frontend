@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 function HeaderBar() {
     return (
-        <div className='container'>
+        <div className='container' style={{padding: '40px'}}>
             
 
             <nav className="navbar navbar-expand-lg navbar-light fixed-top">
