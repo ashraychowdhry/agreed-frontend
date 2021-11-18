@@ -2,10 +2,6 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
 
-
-// import jwt from 'jsonwebtoken'
-// import { useNavigate } from 'react-router-dom'
-
 const Dashboard = () => {
 	return (
 		<div style={{padding: '40px'}}>

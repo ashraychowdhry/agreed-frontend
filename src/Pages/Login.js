@@ -32,9 +32,6 @@ function Login() {
 
 
   return (
-    // <div className="App">
-    //   <FlightQueryCaller />
-    // </div>
     <div>
 			<h1>Login</h1>
 			<form onSubmit={LoginUser}>

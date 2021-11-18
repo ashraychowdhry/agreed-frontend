@@ -1,5 +1,4 @@
 import { useState } from 'react';
-// import FlightQueryCaller from './FlightQueryCaller';
 import { useNavigate } from 'react-router-dom'
 
 function Register() {
@@ -34,9 +33,6 @@ function Register() {
 
 
   return (
-    // <div className="App">
-    //   <FlightQueryCaller />
-    // </div>
     <div>
 			<h1>Register</h1>
 			<form onSubmit={registerUser}>
