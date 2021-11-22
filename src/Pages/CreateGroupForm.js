@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormControl from "@material-ui/core/FormControl";
-import FormLabel from "@material-ui/core/FormLabel";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import Radio from "@material-ui/core/Radio";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
 import Slider from "@material-ui/core/Slider";
 import Button from "@material-ui/core/Button";
 
@@ -23,8 +16,6 @@ const defaultValues = {
     desiredLocation: "",
     maxPrice: 0,
   };
-
-
 
 export default function CreateGroupForm() {
     const [formValues, setFormValues] = useState(defaultValues)
@@ -71,8 +62,6 @@ export default function CreateGroupForm() {
             console.log(data.status)
 			alert("Please fix the errors before continuing")
 		}
-
-        //console.log(formValues);
       };
 
     return (
@@ -103,54 +92,6 @@ export default function CreateGroupForm() {
                         onChange={handleInputChange}
                     />
                     </Grid>
-
-                    {/* 
-                        <Grid item>
-                            <FormControl>
-                                <FormLabel>Do you know where you want to go?</FormLabel>
-                                <RadioGroup
-                                name="knownLocation"
-                                value={formValues.knownLocation}
-                                onChange={handleInputChange}
-                                row
-                                >
-                                <FormControlLabel
-                                    key="yes"
-                                    value="yes"
-                                    control={<Radio size="small" />}
-                                    label="Yes"
-                                />
-                                <FormControlLabel
-                                    key="no"
-                                    value="no"
-                                    control={<Radio size="small" />}
-                                    label="No"
-                                />
-                                </RadioGroup>
-                            </FormControl>
-                        </Grid>
-
-                        <Grid item>
-                            <FormControl>
-                                <Select
-                                name="os"
-                                value={formValues.os}
-                                onChange={handleInputChange}
-                                >
-                                <MenuItem key="mac" value="mac">
-                                    Mac
-                                </MenuItem>
-                                <MenuItem key="windows" value="windows">
-                                    Windows
-                                </MenuItem>
-                                <MenuItem key="linux " value="linux">
-                                    Linux
-                                </MenuItem>
-                                </Select>
-                            </FormControl>
-                        </Grid>
-                    
-                    */}
 
                     <Grid item style={{padding: '20px'}}>
                     <div style={{ width: "400px" }}>
@@ -203,8 +144,6 @@ export default function CreateGroupForm() {
                     </LocalizationProvider>
                 </Grid>
                 
-
-
                     <Button variant="contained" color="primary" type="submit">
                     Submit
                     </Button>

@@ -33,7 +33,9 @@ function HeaderBar() {
                     <li className="nav-item">
                         <Link to='/register' className="nav-link" >Register</Link>
                     </li>
-                    
+                    <li className="nav-item">
+                        <Link to='/' className="nav-link" >Log out</Link>
+                    </li>
                 </ul>
                 
             </div>

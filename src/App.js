@@ -8,6 +8,7 @@ import HeaderBar from './Components/HeaderBar'
 import AboutUs from './Pages/AboutUs'
 import PageNotFoundPage from './Pages/PageNotFoundPage'
 import CreateGroupForm from './Pages/CreateGroupForm'
+import IndividualForm from './Components/IndividualFormSteps/IndividualForm'
 
 const App = () => {
 	return (
@@ -21,6 +22,7 @@ const App = () => {
                     <Route path="/dashboard" element={<Dashboard/>} />
                     <Route path="/aboutus" element={<AboutUs/>} />
                     <Route path="/creategroupform" element={<CreateGroupForm/>} />
+                    <Route path="/individualform" element={<IndividualForm/>} />
                     <Route path='*' element={<PageNotFoundPage />} />
                 </Routes>
 			</BrowserRouter>
