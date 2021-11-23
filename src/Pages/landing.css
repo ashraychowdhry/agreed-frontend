@@ -1,6 +1,6 @@
 .landing-wrapper {
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-    url("../assets/landing-background.jpeg");
+    url("../assets/landing_background.jpeg");
   height: 100vh;
   padding: 0;
   align-items: center;
