@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 function HeaderBar() {
     return (
         <div className='container' style={{padding: '20px'}}>
-            
+
 
             <nav className="navbar navbar-expand-lg navbar-light fixed-top">
             .<div className="container">
@@ -37,7 +37,7 @@ function HeaderBar() {
                         <Link to='/' className="nav-link" >Log out</Link>
                     </li>
                 </ul>
-                
+
             </div>
 
             </div>
