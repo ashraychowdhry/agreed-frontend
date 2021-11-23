@@ -8,6 +8,7 @@ const Dashboard = () => {
 			<h1>Dashboard</h1>
 			<Button variant="contained" color="secondary" href='/creategroupform'>Create a Group</Button>
 			<Button variant="contained" color="secondary" href='/individualform'>Individual Form</Button>
+			<Button variant="contained" color="secondary" href='/creditcard'>Credit Card Payment</Button>
 		</div>
 		
 	)
