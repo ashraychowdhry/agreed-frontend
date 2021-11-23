@@ -1,21 +1,48 @@
-.landing-wrapper {
-  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-    url("../assets/landing_background.jpeg");
-  height: 100vh;
-  padding: 0;
-  align-items: center;
-  position: relative;
-  display: block;
-  text-align: center;
+@import url("https://use.typekit.net/ozp1nzr.css");
+@import url("https://use.typekit.net/ozp1nzr.css");
+
+.landing {
+  background-image: url("../assets/landing_background.png");
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+a:link, a:visited, a:active, a:hover {
+    color: #ffffff;
+}
+
+.logo {
+    font-family: kopius, serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 36pt;
+    letter-spacing: 5px;
+    position: fixed;
+    padding-top: 25px;
+    padding-left: 60px;
+    color: #ffffff;
+}
+
+.loginForm {
+    position: fixed;
+    right: 275px;
+    top: 250px;
 }
 
 .title {
-  font-size: 90px;
-  font-weight: bold;
-  padding-top: 80px;
+    font-family: mr-eaves-modern, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 36pt;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #94031e;
 }
 
 .subtitle {
-  font-size: 30px;
-  font-weight: bold;
+    font-size: 30px;
+    font-weight: bold;
 }
