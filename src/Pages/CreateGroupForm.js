@@ -11,14 +11,23 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import Box from '@mui/material/Box';
 
+import emailjs from "emailjs-com"
+
 const defaultValues = {
     groupName: "",
     desiredLocation: "",
     maxPrice: 0,
+    securedPin: "",
   };
 
 export default function CreateGroupForm() {
     const [formValues, setFormValues] = useState(defaultValues)
+    const [creatorName, setcreatorName] = useState("")
+    const [creatorEmail, setcreatorEmail] = useState("")
+    const [membersEmails, setmembersEmails] = useState([])
+    const [securedPin, setsecuredPin] = useState("")
+    const [email, setEmail] = useState("")
+
     const [dateValue, setDateValue] = React.useState([null, null]);
 
     const handleInputChange = (e) => {
@@ -40,6 +49,21 @@ export default function CreateGroupForm() {
         event.preventDefault();
         console.log(formValues);
         console.log(dateValue);
+        (()=>{ 
+            for(let i = 0; i < membersEmails.length; i++  ) {
+                
+                setEmail(membersEmails[i])
+                emailjs.sendForm(
+                "service_9e1t1sb", 
+                "template_05jwoih", 
+                event.target, 
+                "user_iKEVY9oLoC77kNCkxXmTw" ).then(res => {
+                    console.log(email)
+                    console.log(membersEmails[i])
+                }).catch(err => console.log(err)) 
+                setEmail("") 
+            }
+        })()
         const response = await fetch('http://localhost:3001/api/creategroup', {
 			method: 'POST',
 			headers: {
@@ -49,6 +73,7 @@ export default function CreateGroupForm() {
 				...formValues,
                 earliestDate: dateValue[0],
                 latestDate: dateValue[1],
+                securedPin,
 			}),
 		})
 
@@ -57,7 +82,7 @@ export default function CreateGroupForm() {
 		if (data.status === 'ok') {
 			localStorage.setItem("token", data.user)
 			alert("Group creation successful")
-			window.location.href = "/dashboard"
+			window.location.href ="/individualform"
 		} else {
             console.log(data.status)
 			alert("Please fix the errors before continuing")
@@ -79,6 +104,28 @@ export default function CreateGroupForm() {
                         type="text"
                         value={formValues.groupName}
                         onChange={handleInputChange}
+                    />
+                    </Grid>
+
+                    <Grid item style={{padding: '20px'}}>
+                    <TextField
+                        id="name-input"
+                        name="creatorName"
+                        label="Creator Name"
+                        type="text"
+                        value={creatorName}
+                        onChange={(e) => setcreatorName(e.target.value)}
+                    />
+                    </Grid>
+
+                    <Grid item style={{padding: '20px'}}>
+                    <TextField
+                        id="name-input"
+                        name="creatorEmail"
+                        label="Creator Email"
+                        type="text"
+                        value={creatorEmail}
+                        onChange={(e) => setcreatorEmail(e.target.value)}
                     />
                     </Grid>
 
@@ -142,6 +189,34 @@ export default function CreateGroupForm() {
                             )}
                         />
                     </LocalizationProvider>
+                </Grid>
+
+                <Grid item style={{padding: '20px'}}>
+                <div style={{ width: "400px" }}>
+                    Add emails of members for them to join
+                    <TextField
+                        id="emails-input"
+                        name="membersEmails"
+                        label="Comma separate emails"
+                        type="text"
+                        value={membersEmails}
+                        onChange={(e) => setmembersEmails(e.target.value)}
+                    />
+                </div>
+                </Grid>
+
+                <Grid item style={{padding: '20px'}}>
+                <div style={{ width: "400px" }}>
+                    Enter a secured pin for your group
+                    <TextField
+                        id="secured-pin"
+                        name="securedPin"
+                        label="Secured pin"
+                        type="text"
+                        value={securedPin}
+                        onChange={(e) => setsecuredPin(e.target.value)}
+                    />
+                </div>
                 </Grid>
                 
                     <Button variant="contained" color="primary" type="submit">
