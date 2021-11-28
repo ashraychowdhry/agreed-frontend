@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import './landing.css'
+import '../styles.css'
 // import FlightQueryCaller from './FlightQueryCaller';
 
 function Login() {
@@ -32,8 +34,12 @@ function Login() {
 
 
   return (
-    <div>
-			<h1>Login</h1>
+    <div className='landing'>
+		<div className='logo'>
+			<a href='/'>ABEONA</a>
+		</div>
+		<div className='loginForm'>
+			<h1 className='title'>Welcome Back!</h1>
 			<form onSubmit={LoginUser}>
 				<input
 					value={email}
@@ -52,6 +58,7 @@ function Login() {
 				<input type="submit" value="Login" />
 			</form>
 		</div>
+	</div>
   );
 }
 
