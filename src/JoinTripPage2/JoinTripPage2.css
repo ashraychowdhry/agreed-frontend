@@ -1,0 +1,14 @@
+* {
+	margin: 0;
+}
+
+.joinTripPage2 {
+	background-color: #00254a;
+	height: 100vh;
+}
+
+.joinTripPage2_header {
+	padding: 20px;
+	border-bottom: 1px solid lightgray;
+	object-fit: contain; /* dont stretch this image ever */
+}

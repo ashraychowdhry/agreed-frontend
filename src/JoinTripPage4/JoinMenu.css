@@ -1,0 +1,17 @@
+.menu {
+	display: inline-block;
+	width: 600px;
+	height: 600px;
+	background: #ebebeb;
+}
+
+.nav__header {
+	display: flex; /* puts the avatar image next to the username text */
+	align-items: center; /* centers the username up and down */
+	padding: 50px 100px;
+}
+
+.menu__button {
+	padding: 10px 50px;
+	object-fit: contain;
+}

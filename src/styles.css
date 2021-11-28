@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+
+:root {
+  --primary-white: #fff;
+  --primary-orange: #f9ab00;
+  --primary-dark: #2b2b2b;
+  --primary-red: #ef4035;
+  --primary-hover-red: #f33501;
+  --primary-light-grey: #dbdbdb;
+  --primary-dark-red: #8b0000;
+  --secondary-red: #e28080;
+  --primary-black: #000000;
+  --primary-shadow: rgba(0, 0, 0, 0.6);
+  --primary-green: #1cbd04;
+}
+
+.main-font {
+  font-family: "Roboto Condensed", sans-serif !important;
+  color: var(--primary-light-grey);
+}

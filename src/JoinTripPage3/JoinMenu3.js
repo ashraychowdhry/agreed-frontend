@@ -10,6 +10,7 @@ import FormControl from '@mui/material/FormControl';
 import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import { padding } from '@mui/material/node_modules/@mui/system';
 
 
 
@@ -17,41 +18,36 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 function Menu() {
     return (
         <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height: 'center'}}>
-            <Card sx={{ maxWidth: 1000 }}>
+            <Card sx={{ minWidth: 400, maxWidth: 600, minHeight: 600 }}>
                 <CardContent>
                     <Typography gutterBottom variant="h5" color="#9a031e">
                         Join A Trip
                     </Typography>
 
                     <Typography gutterBottom variant="h3" color="#9a031e">
-                        Trip Name!
+                        --Trip Name--
                     </Typography>
-
-                    <TextField fullWidth label="Where are you departing from?" variant="filled" />
-
 
                     <Typography gutterBottom variant="h5" component="div" color="#9a031e" >
-                        Select your per-seat budget for flights:
+                        Are you booking anyone else on your flight?
                     </Typography>
 
-                    <TextField id="filled-basic" label="$ Min" variant="filled" />
-                    <TextField id="filled-basic" label="$ Max" variant="filled" />
-
-                    <Typography gutterBottom variant="h5" component="div" color="#9a031e">
-                        Select the dates of your flgihts:
+                    <Typography gutterBottom variant="h5" component="div" color="#9a031e" >
+                        Enter their information if so:
                     </Typography>
 
-                    <TextField id="filled-basic" label="MM/DD/YYYY" variant="filled" />
-                    <TextField id="filled-basic" label="MM/DD/YYYY" variant="filled" />
+                    <TextField fullWidth label="First Name" variant="filled" />
+                <div style={{padding: 10}}></div>
+                    <TextField fullWidth label="Middle Name" variant="filled" />
+                <div style={{padding: 10}}></div>
+                    <TextField fullWidth label="Last Name" variant="filled" />
+                <div style={{padding: 10}}></div>
 
-                    <div >
-                        <Typography gutterBottom variant="h7" component="div" color="black">
-                            Departure
-                        </Typography>
-                        <Typography gutterBottom variant="h7" component="div" color="black" align="right">
-                            Return
-                        </Typography>
-                    </div>
+                    <TextField id="filled-basic" label="DOB (MM/DD/YYYY" variant="filled" />
+                    <TextField id="filled-basic" label="Gender" variant="filled" />
+                <div style={{padding: 10}}></div>
+                    <TextField id="filled-basic" label="Phone Number" variant="filled" />
+                    <TextField id="filled-basic" label="Email" variant="filled" />
                     
                 </CardContent>
 
@@ -60,25 +56,29 @@ function Menu() {
                     <FormControlLabel
                         value="end"
                         control={<Checkbox />}
-                        label="Morning"
+                        label="Carry-On Only"
                         labelPlacement="end"
                     />
                     <FormControlLabel
                         value="end"
                         control={<Checkbox />}
-                        label="Afternoon"
+                        label="1 Checked Bag"
                         labelPlacement="end"
                     />
                     <FormControlLabel
                         value="end"
                         control={<Checkbox />}
-                        label="Evening"
+                        label="2+ Checked Bags"
                         labelPlacement="end"
                     />
                 </FormGroup>
             </FormControl>
 
                 <CardActions>
+                        <Button size="large" color="primary" >
+                            BACK
+                        </Button>
+
                         <Button size="large" color="primary" >
                             CONTINUE
                         </Button>
