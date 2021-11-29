@@ -120,7 +120,7 @@ export default function CreateGroupForm() {
                         valueLabelDisplay="off"
                         />
                     </div>
-    
+
                     {"$" + formValues.maxPrice}
                     </Grid>
 
@@ -143,16 +143,13 @@ export default function CreateGroupForm() {
                         />
                     </LocalizationProvider>
                 </Grid>
-                
+
                     <Button variant="contained" color="primary" type="submit">
                     Submit
                     </Button>
                 </Grid>
 
             </form>
-
-            
-
         </div>
     )
 }

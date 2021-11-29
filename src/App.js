@@ -1,14 +1,14 @@
-import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Login from './Pages/LandingLogin'
-import Register from './Pages/Register'
-import Dashboard from './Pages/Dashboard'
-import Landing from './Pages/LandingLogin'
-import HeaderBar from './Components/HeaderBar'
-import AboutUs from './Pages/AboutUs'
-import PageNotFoundPage from './Pages/PageNotFoundPage'
-import CreateGroupForm from './Pages/CreateGroupForm'
-import IndividualForm from './Components/IndividualFormSteps/IndividualForm'
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './Pages/Landing';
+import Register from './Pages/Register';
+import Dashboard from './Pages/Dashboard';
+import NavBar from './Components/NavBar';
+import Landing from './Pages/Landing';
+import AboutUs from './Pages/AboutUs';
+import PageNotFoundPage from './Pages/PageNotFoundPage';
+import CreateGroupForm from './Pages/CreateGroupForm';
+import IndividualForm from './Components/IndividualFormSteps/IndividualForm';
 
 const App = () => {
 	return (
@@ -26,7 +26,7 @@ const App = () => {
                 </Routes>
 			</BrowserRouter>
 		</div>
-	)
+	);
 }
 
 export default App
