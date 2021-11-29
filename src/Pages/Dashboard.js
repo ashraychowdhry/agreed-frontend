@@ -1,7 +1,8 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {  useState } from "react";
+import Button from '@material-ui/core/Button';
+import NavBar from '../Components/NavBar.js';
 
 const Dashboard = () => {
 	const [securedPin, setsecuredPin] = useState('')
@@ -23,19 +24,20 @@ const Dashboard = () => {
 
 		if(data.status === 'ok') {
 			alert('Successfully Joined Group')
-			window.location.href = "/individualform" 
+			window.location.href = "/individualform"
 		} else {
 			alert('Please enter the right pin')
 		}
-	}	
+	}
 
 	return (
+
 		<div>
 			<NavBar/>
 			<div className='group'>
 				<h2>Trip Dashboard</h2>
 				<h3>Group Pin</h3>
-				
+
 			</div>
 
 			<Button variant="contained" color="secondary" href='/creategroupform'>Create a Group</Button>
