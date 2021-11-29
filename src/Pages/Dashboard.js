@@ -33,6 +33,8 @@ const Dashboard = () => {
 		<div style={{padding: '40px'}}>
 			<h1>Dashboard</h1>
 			<Button variant="contained" color="secondary" href='/creategroupform'>Create a Group</Button>
+			<Button variant="contained" color="secondary" href='/individualform'>Individual Form</Button>
+			<Button variant="contained" color="secondary" href='/creditcard'>Credit Card Payment</Button>
 			<form onSubmit={joinGroup}>
 				<input
 					value={securedPin}
@@ -42,9 +44,7 @@ const Dashboard = () => {
 				/>
 				<br />
 				<input type="submit" value="JOIN A GROUP" />
-				
 			</form>
-			
 		</div>
 		
 	)
