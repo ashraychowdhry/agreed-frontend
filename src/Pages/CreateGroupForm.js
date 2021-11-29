@@ -9,7 +9,7 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import Box from '@mui/material/Box';
 
-import emailjs from "emailjs-com"
+import emailjs from "emailjs-com";
 
 const defaultValues = {
     groupName: "",
@@ -47,19 +47,19 @@ export default function CreateGroupForm() {
         event.preventDefault();
         console.log(formValues);
         console.log(dateValue);
-        (()=>{ 
+        (()=>{
             for(let i = 0; i < membersEmails.length; i++  ) {
-                
+
                 setEmail(membersEmails[i])
                 emailjs.sendForm(
-                "service_9e1t1sb", 
-                "template_05jwoih", 
-                event.target, 
+                "service_9e1t1sb",
+                "template_05jwoih",
+                event.target,
                 "user_iKEVY9oLoC77kNCkxXmTw" ).then(res => {
                     console.log(email)
                     console.log(membersEmails[i])
-                }).catch(err => console.log(err)) 
-                setEmail("") 
+                }).catch(err => console.log(err))
+                setEmail("")
             }
         })()
         const response = await fetch('http://localhost:3001/api/creategroup', {
@@ -205,17 +205,24 @@ export default function CreateGroupForm() {
                 </Grid>
 
                 <Grid item style={{padding: '20px'}}>
-                <div style={{ width: "400px" }}>
-                    Enter a secured pin for your group
-                    <TextField
-                        id="secured-pin"
-                        name="securedPin"
-                        label="Secured pin"
-                        type="text"
-                        value={securedPin}
-                        onChange={(e) => setsecuredPin(e.target.value)}
-                    />
-                </div>
+                    <div style={{ width: "400px" }}>
+                        Enter a secured pin for your group
+                        <TextField
+                            id="secured-pin"
+                            name="securedPin"
+                            label="Secured pin"
+                            type="text"
+                            value={securedPin}
+                            onChange={(e) => setsecuredPin(e.target.value)}
+                        />
+                    </div>
                 </Grid>
-                
+                <Button variant="contained" color="primary" type="submit">
+               Submit
+               </Button>
+           </Grid>
+       </form>
 
+   </div>
+)
+}
