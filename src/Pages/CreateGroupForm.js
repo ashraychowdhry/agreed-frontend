@@ -3,8 +3,6 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Slider from "@material-ui/core/Slider";
 import Button from "@material-ui/core/Button";
-
-
 import TF from '@mui/material/TextField';
 import DateRangePicker from '@mui/lab/DateRangePicker';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
@@ -167,7 +165,7 @@ export default function CreateGroupForm() {
                         valueLabelDisplay="off"
                         />
                     </div>
-    
+
                     {"$" + formValues.maxPrice}
                     </Grid>
 
@@ -190,6 +188,7 @@ export default function CreateGroupForm() {
                         />
                     </LocalizationProvider>
                 </Grid>
+
 
                 <Grid item style={{padding: '20px'}}>
                 <div style={{ width: "400px" }}>
@@ -219,15 +218,4 @@ export default function CreateGroupForm() {
                 </div>
                 </Grid>
                 
-                    <Button variant="contained" color="primary" type="submit">
-                    Submit
-                    </Button>
-                </Grid>
 
-            </form>
-
-            
-
-        </div>
-    )
-}

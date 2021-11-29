@@ -1,0 +1,46 @@
+@import url("https://use.typekit.net/ozp1nzr.css");
+@import url("https://use.typekit.net/ozp1nzr.css");
+
+.navbar {
+    background-color: #94031e;
+    margin-bottom: 10px;
+    overflow: hidden;
+
+    height: 80px;
+}
+
+.nav-left {
+    font-family: kopius, serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 28pt;
+    letter-spacing: 5px;
+    color: #ffffff;
+    padding-left: 60px;
+}
+
+.nav-right {
+    float: right;
+    padding-right: 60px;
+    padding-top: 15px;
+}
+
+li {
+    list-style-type: none;
+    display: inline;
+    padding-left: 30px;
+    font-family: mr-eaves-modern, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16pt;
+    letter-spacing: 1.5px;
+}
+
+
+a[href*="#"]:link,
+a[href*="#"]:visited,
+a[href*="#"]:hover,
+a[href*="#"]:active {
+    text-decoration: none;
+    color: #ffffff;
+}
