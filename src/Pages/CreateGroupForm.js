@@ -8,7 +8,7 @@ import DateRangePicker from '@mui/lab/DateRangePicker';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import Box from '@mui/material/Box';
-
+import NavBar from '../Components/NavBar.js';
 import emailjs from "emailjs-com";
 
 const defaultValues = {
@@ -88,7 +88,8 @@ export default function CreateGroupForm() {
       };
 
     return (
-        <div style={{padding: '40px'}}>
+        <div>
+            <NavBar/>
             <h1>Create Group Form</h1>
 
             <form onSubmit={handleSubmit}>

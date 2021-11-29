@@ -2,25 +2,48 @@
 @import url("https://use.typekit.net/ozp1nzr.css");
 
 .group {
-    margin-top: 50px;
+    display: table;
+    margin: 25px auto;
 }
 
-h2 {
+.header {
     font-family: mr-eaves-modern, sans-serif;
-    font-weight: 700;
+    font-weight:700;
     font-style: normal;
-    text-align: center;
     letter-spacing: 2px;
     font-size: 30pt;
     color: #94031e;
 }
 
-h3 {
+.header-pin {
+    margin-top: 50px;
     font-family: mr-eaves-modern, sans-serif;
     font-weight: 400;
     font-style: normal;
-    text-align: left;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
+    font-size: 16pt;
     color: #000000;
-    font-size: 22pt;
+    text-align: left;
+}
+
+.pin {
+    text-align: center;
+}
+
+.creategroup-prompt {
+    font-family: mr-eaves-modern, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16pt;
+    text-align: center;
+    letter-spacing: 1.5px;
+    padding-top: 20px;
+}
+
+a[href*="/creategroupform"]:link,
+a[href*="/creategroupform"]:visited,
+a[href*="/creategroupform"]:hover,
+a[href*="/creategroupform"]:active {
+    text-decoration: none;
+    color: #94031e;
 }

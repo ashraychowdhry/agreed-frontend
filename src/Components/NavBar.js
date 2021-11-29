@@ -12,8 +12,9 @@ function NavBar() {
             </div>
             <div className='nav-right'>
     			<ul>
-    				<li><a href="#">Add Payment</a></li>
-    				<li><a href="#">Log out</a></li>
+    				<li><a href="/dashboard">Dashboard</a></li>
+    				<li><a href="/aboutus">About Us</a></li>
+                    <li><a href="#">Log out</a></li>
     			</ul>
             </div>
 		</div>
