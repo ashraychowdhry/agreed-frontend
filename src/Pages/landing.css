@@ -10,8 +10,40 @@
   background-position: center;
 }
 
-a:link, a:visited, a:active, a:hover {
+/*
+Below will be temporary. I plan to use an image that already has the desired
+styling for the home logo link.
+*/
+a[href*="/"]:link,
+a[href*="/"]:visited,
+a[href*="/"]:hover,
+a[href*="/"]:active {
+    text-decoration: none;
     color: #ffffff;
+}
+
+.registerPrompt {
+    font-family: mr-eaves-modern, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18pt;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-top: 20px;
+}
+
+input[type=button] {
+    font-family: mr-eaves-modern, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18pt;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-top: 20px;
+    border: none;
+    display: inline;
+    background: none;
+    color: #94031e;
 }
 
 .logo {
@@ -36,7 +68,7 @@ a:link, a:visited, a:active, a:hover {
     font-family: mr-eaves-modern, sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 36pt;
+    font-size: 28pt;
     text-align: center;
     letter-spacing: 2px;
     color: #94031e;

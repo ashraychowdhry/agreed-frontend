@@ -1,3 +1,4 @@
+// THIS FILE IS UNUSED // 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 
@@ -33,8 +34,8 @@ function Register() {
 
 
   return (
-    <div>
-			<h1>Register</h1>
+    <div className='registerPopup'>
+	    <h1>Register</h1>
 			<form onSubmit={registerUser}>
 				<input
 					value={firstName}
@@ -43,7 +44,7 @@ function Register() {
 					placeholder="First Name"
 				/>
 				<br />
-        <input
+        	    <input
 					value={lastName}
 					onChange={(e) => setLastName(e.target.value)}
 					type="text"
@@ -66,7 +67,7 @@ function Register() {
 				<br />
 				<input type="submit" value="Register" />
 			</form>
-		</div>
+	</div>
   );
 }
 

@@ -1,8 +1,10 @@
-
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import {  useState } from "react";
 import Button from '@material-ui/core/Button';
 import Login from './LandingLogin';
+import NavBar from '../Components/NavBar.js';
+import './dashboard.css';
 
 const Dashboard = () => {
 	const [securedPin, setsecuredPin] = useState('')
@@ -24,11 +26,11 @@ const Dashboard = () => {
 
 		if(data.status === 'ok') {
 			alert('Successfully Joined Group')
-			window.location.href = "/individualform" 
+			window.location.href = "/individualform"
 		} else {
 			alert('Please enter the right pin')
 		}
-	}	
+	}
 
 	async function logout(event) {
 		localStorage.removeItem("token");
@@ -53,9 +55,8 @@ const Dashboard = () => {
 				<input type="submit" value="JOIN A GROUP" />
 			</form>
 		</div>
-		
-	)
-	
+
+	);
 }
 
-export default Dashboard
+export default Dashboard;
