@@ -28,6 +28,7 @@ const Dashboard = () => {
 		const data = await response.json()
 
 		if(data.status === 'ok') {
+			console.log(data)
 			localStorage.setItem("currentGroup", data.id)
 			alert('Successfully Joined Group ' + data.id)
 			window.location.href = "/individualform" 
@@ -38,13 +39,15 @@ const Dashboard = () => {
 	}
 
 	async function populateDashboard() {
+		//localStorage.setItem("currentGroup", "")
 		const response = await fetch('http://localhost:3001/api/getusergroups', {
 			method: "POST",
 			headers: {
 				'Content-Type': 'application/json',
+				
 			},
 			body: JSON.stringify({
-				userID,
+				userID: userID,
 			}),
 		})
 
@@ -89,10 +92,7 @@ const Dashboard = () => {
 				{groups.map((group, i) => {
 					return (
 						<div className='group-list' key={i}>
-							<h3 className='header'> {group.groupName} </h3>
-							<h4 className='header'> {group.groupPin} </h4>
-							<h4 className='header'> {group.groupID} </h4>
-							<h4 className='header'> {group.groupDescription} </h4>
+							<Button variant="contained" color="primary" href='/searchresults'>{group.groupName + " " + group.groupID}</Button>
 						</div>
 					)
 				})}

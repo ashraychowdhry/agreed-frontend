@@ -10,7 +10,6 @@ import PageNotFoundPage from './Pages/PageNotFoundPage'
 import CreateGroupForm from './Pages/CreateGroupForm'
 import IndividualForm from './Components/IndividualFormSteps/IndividualForm'
 import CreditCard from './Components/CreditCard'
-import SearchResults from './Pages/SearchResults'
 import FlightQueryCaller from './Components/FlightQueryCaller'
 
 const App = () => {
@@ -50,7 +49,7 @@ const App = () => {
                             <Login/>
                         )} 
                     />
-                    <Route path="/searchresults" element={<SearchResults/>} />
+                    <Route path="/searchresults" element={<FlightQueryCaller/>} />
                     <Route path='*' element={<PageNotFoundPage />} />
                     
                 </Routes>
