@@ -31,8 +31,12 @@ function Login() {
 	   const data = await response.json()
 
 	   if (data.status === 'ok') {
-		   navigate('/login', {replace: true})
+			console.log(data)
+		   
 	   }
+	   else {
+		console.log(data)
+	}
 	}
 
 	async function LoginUser(event) {

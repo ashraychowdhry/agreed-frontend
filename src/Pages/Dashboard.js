@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import {  useState } from "react";
 import Button from '@material-ui/core/Button';
@@ -8,6 +8,7 @@ import './dashboard.css';
 
 const Dashboard = () => {
 	const [securedPin, setsecuredPin] = useState('')
+	const [groups, setGroups] = useState([])
 	const userID = localStorage.getItem('username')
 
 	async function joinGroup(event) {
@@ -27,13 +28,40 @@ const Dashboard = () => {
 		const data = await response.json()
 
 		if(data.status === 'ok') {
-			alert('Successfully Joined Group' + data.id)
+			localStorage.setItem("currentGroup", data.id)
+			alert('Successfully Joined Group ' + data.id)
 			window.location.href = "/individualform" 
 		} else {
 			console.log(data)
 			alert('Please enter the right pin')
 		}
 	}
+
+	async function populateDashboard() {
+		const response = await fetch('http://localhost:3001/api/getusergroups', {
+			method: "POST",
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				userID,
+			}),
+		})
+
+		const data = await response.json()
+
+		if(data.status === 'ok') {
+			console.log(data.groups)
+			return data.groups
+		} else {
+			console.log(data)
+			alert('Error getting groups')
+		}
+	}
+
+	useEffect(() => {
+		populateDashboard().then((g) => {setGroups(g)})
+	}, [])
 
 	return (
 		<div>
@@ -55,6 +83,19 @@ const Dashboard = () => {
 					</form>
 				</div>
 				<h4 className='creategroup-prompt'>Need to plan a new trip? <a href='/creategroupform'>Create a group</a></h4>
+			</div>
+
+			<div>
+				{groups.map((group, i) => {
+					return (
+						<div className='group-list' key={i}>
+							<h3 className='header'> {group.groupName} </h3>
+							<h4 className='header'> {group.groupPin} </h4>
+							<h4 className='header'> {group.groupID} </h4>
+							<h4 className='header'> {group.groupDescription} </h4>
+						</div>
+					)
+				})}
 			</div>
 		</div>
 

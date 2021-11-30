@@ -28,6 +28,8 @@ export default function CreateGroupForm() {
 
     const [dateValue, setDateValue] = React.useState([null, null]);
 
+    var uID = localStorage.getItem("username")
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormValues({
@@ -74,7 +76,7 @@ export default function CreateGroupForm() {
 				...formValues,
                 earliestDate: dateValue[0],
                 latestDate: dateValue[1],
-                user: 'testUserID'
+                userID: uID,
 			}),
 		})
 
@@ -82,6 +84,7 @@ export default function CreateGroupForm() {
 
 		if (data.status === 'ok') {
 			localStorage.setItem("token", data.user)
+            localStorage.setItem("currentGroup", data.id)
 			alert("Group creation successful: " + data.id)
 			window.location.href ="/individualform"
 		} else {

@@ -25,18 +25,24 @@ export default function SubmitForm() {
     async function handleSubmit(event) {
         event.preventDefault();
         console.log(details);
+        var currGroup = localStorage.getItem('currentGroup');
+        var currUser = localStorage.getItem('username');
         const response = await fetch('http://localhost:3001/api/individualform', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-                maxPrice,
-                flightPreference,
-                arrivalTime,
-                departureTime,
-                arriveOn,
-                departOn
+                budget: maxPrice,
+                flightPreference: flightPreference,
+                arrivalTime: arrivalTime,
+                departureTime: departureTime,
+                userID: currUser,
+                groupID: currGroup,
+                arrival: arriveOn,
+                departure: departOn,
+                
+
 			}),
 		})
 
