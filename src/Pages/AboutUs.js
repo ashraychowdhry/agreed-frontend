@@ -1,10 +1,14 @@
 import React from 'react'
-import FlightResultCard from '../CustomUI/FlightResultCard'
+import './Global.css';
+import Box from '@mui/material/Box';
+import NavBar from '../Components/NavBar.js';
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import { faItalic } from '@fortawesome/free-solid-svg-icons';
+
 
 export default function AboutUs() {
-
     async function getData() {
-
         const response = await fetch('http://localhost:3001/api/getusergroups', {
             method: 'GET',
             headers: {
@@ -25,16 +29,37 @@ export default function AboutUs() {
             console.log(data.status)
             alert("Please fix the errors before continuing")
         }
-
     }
 
-
-
     return (
-        <div style={{padding: '40px'}}>
-            <p>Abeona is a startup venture created in Georgia Tech's CREATE-X program.</p>
-
-            <FlightResultCard personName="Ashray Chowdhry" flightResult='Dummy Amadeus result: Delta Dec. 25th 12:00PM ATL-EWR'/>
+        <div className='blueBG'>
+            <NavBar/>
+            <div className="aboutMenuCard">
+                <h5 item style={{paddingTop: 20,
+                                paddingLeft: 40,
+                                paddingRight: 40}}>
+                    Traveling with friends and family should be fun...
+                </h5>
+                <br></br>
+                
+                <h5 item style={{fontStyle: 'italic', paddingLeft: 40, paddingBottom: 20}}>
+                    Just fun.
+                </h5>
+                
+                <p item style={{paddingLeft: 40, paddingRight: 40}}>
+                    We all want to share adventures with the people we love.
+                    But the effort and stress of planning moments of connection
+                    frequently makes this ideal difficult to achieve.
+                    <br></br>
+                    <br></br>
+                    Abeona streamlines this process so that you
+                    can spend more time making memories with the
+                    people you care about.
+                    <br></br>
+                    <br></br>
+                    Abeona is a startup venture created in Georgia Tech's CREATE-X program.
+                </p>
+            </div>
         </div>
     )
 }

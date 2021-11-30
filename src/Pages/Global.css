@@ -22,6 +22,34 @@
 	position: flex;
 }
 
+.aboutMenuCard {
+	box-shadow: 3px 3px 4px 2px #888888;
+	background-color: #efefef;
+	margin-bottom: auto;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	overflow: hidden;
+	width: 600px;
+	height: 400px;
+	position: flex;
+}
+
+.mediumMenuCard {
+	box-shadow: 3px 3px 4px 2px #888888;
+	background-color: #efefef;
+	margin-bottom: auto;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	overflow: hidden;
+	width: 600px;
+	height: 300px;
+	position: flex;
+}
+
 .blueBG {
 	background-color: #00254a;
 	position: fixed;
