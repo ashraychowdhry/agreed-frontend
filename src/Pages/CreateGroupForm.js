@@ -223,10 +223,10 @@ export default function CreateGroupForm() {
                                 */}
 
                 <div item style={{height: 20}}></div>
-
                 <Button variant="contained" color="primary" type="submit">
                Submit
                </Button>
+            
            </Grid>
        </form>
     </div>
