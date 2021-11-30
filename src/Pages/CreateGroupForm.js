@@ -49,6 +49,8 @@ export default function CreateGroupForm() {
         event.preventDefault();
         console.log(formValues);
         console.log(dateValue);
+
+        /*
         (()=>{ 
             for(let i = 0; i < membersEmails.length; i++  ) {
                 
@@ -64,6 +66,7 @@ export default function CreateGroupForm() {
                 setEmail("") 
             }
         })()
+        */
         const response = await fetch('http://localhost:3001/api/creategroup', {
 			method: 'POST',
 			headers: {
@@ -73,7 +76,7 @@ export default function CreateGroupForm() {
 				...formValues,
                 earliestDate: dateValue[0],
                 latestDate: dateValue[1],
-                securedPin,
+                user: 'testUserID'
 			}),
 		})
 
@@ -81,7 +84,7 @@ export default function CreateGroupForm() {
 
 		if (data.status === 'ok') {
 			localStorage.setItem("token", data.user)
-			alert("Group creation successful")
+			alert("Group creation successful: " + data.id)
 			window.location.href ="/individualform"
 		} else {
             console.log(data.status)
@@ -204,10 +207,10 @@ export default function CreateGroupForm() {
                     />
                 </div>
                 </Grid>
-
-                <Grid item style={{padding: '20px'}}>
+                                {/*
+                                 <Grid item style={{padding: '20px'}}>
                 <div style={{ width: "400px" }}>
-                    Enter a secured pin for your group
+                    Enter a pin for your group
                     <TextField
                         id="secured-pin"
                         name="securedPin"
@@ -218,6 +221,8 @@ export default function CreateGroupForm() {
                     />
                 </div>
                 </Grid>
+                                */}
+               
                 
                     <Button variant="contained" color="primary" type="submit">
                     Submit

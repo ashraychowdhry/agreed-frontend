@@ -27,6 +27,7 @@ function Register() {
 		const data = await response.json()
 
 		if (data.status === 'ok') {
+			console.log(data.data)
 			navigate('/login', {replace: true})
 		}
 	}
