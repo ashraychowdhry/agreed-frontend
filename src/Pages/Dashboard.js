@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {  useState } from "react";
 import Button from '@material-ui/core/Button';
+import Login from './LandingLogin';
 import NavBar from '../Components/NavBar.js';
 import './dashboard.css';
 
@@ -31,32 +32,28 @@ const Dashboard = () => {
 		}
 	}
 
+	async function logout(event) {
+		localStorage.removeItem("token");
+	}
+
 	return (
-
-		<div>
-			<NavBar/>
-
-			<div className='group'>
-				<h2 className='header'>Trip Dashboard</h2>
-				<div className='pin'>
-					<h3 className='header-pin'>Group Pin</h3>
-					<form onSubmit={joinGroup}>
-						<input
-							value={securedPin}
-							onChange={(e) => setsecuredPin(e.target.value)}
-							type= "text"
-							placeholder="Enter A Pin To Join One"
-						/>
-						<br />
-						<input type="submit" value="JOIN A GROUP" />
-					</form>
-				</div>
-				<h4 className='creategroup-prompt'>Need to plan a new trip? <a href='/creategroupform'>Create a group</a></h4>
-			</div>
-			
-			//<Button variant="contained" color="secondary" href='/individualform'>Individual Form</Button>
-			//<Button variant="contained" color="secondary" href='/creditcard'>Credit Card Payment</Button>
-
+		<div style={{padding: '40px'}}>
+			<h1>Dashboard</h1>
+			<h2> Hello, {localStorage.username} </h2>
+			<Button variant="contained" color="secondary" href='/creategroupform'>Create a Group</Button>
+			<Button variant="contained" color="secondary" href='/individualform'>Individual Form</Button>
+			<Button variant="contained" color="secondary" href='/creditcard'>Credit Card Payment</Button>
+			<Button variant="contained" onClick={logout} color="secondary" href='/login'>Logout</Button>
+			<form onSubmit={joinGroup}>
+				<input
+					value={securedPin}
+					onChange={(e) => setsecuredPin(e.target.value)}
+					type= "text"
+					placeholder="Enter A Pin To Join One"
+				/>
+				<br />
+				<input type="submit" value="JOIN A GROUP" />
+			</form>
 		</div>
 
 	);
