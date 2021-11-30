@@ -4,29 +4,30 @@ import TextField from "@material-ui/core/TextField";
 import Slider from "@material-ui/core/Slider";
 import Button from "@material-ui/core/Button";
 
-
 import TF from '@mui/material/TextField';
 import DateRangePicker from '@mui/lab/DateRangePicker';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import Box from '@mui/material/Box';
-<<<<<<< Updated upstream
-=======
 import NavBar from '../Components/NavBar.js';
 import emailjs from "emailjs-com";
-import './MenuCards.css';
 import './Global.css';
-
->>>>>>> Stashed changes
 
 const defaultValues = {
     groupName: "",
     desiredLocation: "",
     maxPrice: 0,
+    securedPin: "",
   };
 
 export default function CreateGroupForm() {
     const [formValues, setFormValues] = useState(defaultValues)
+    const [creatorName, setcreatorName] = useState("")
+    const [creatorEmail, setcreatorEmail] = useState("")
+    const [membersEmails, setmembersEmails] = useState([])
+    const [securedPin, setsecuredPin] = useState("")
+    const [email, setEmail] = useState("")
+
     const [dateValue, setDateValue] = React.useState([null, null]);
 
     const handleInputChange = (e) => {
@@ -48,6 +49,24 @@ export default function CreateGroupForm() {
         event.preventDefault();
         console.log(formValues);
         console.log(dateValue);
+
+        /*
+        (()=>{ 
+            for(let i = 0; i < membersEmails.length; i++  ) {
+
+                setEmail(membersEmails[i])
+                emailjs.sendForm(
+                "service_9e1t1sb",
+                "template_05jwoih",
+                event.target,
+                "user_iKEVY9oLoC77kNCkxXmTw" ).then(res => {
+                    console.log(email)
+                    console.log(membersEmails[i])
+                }).catch(err => console.log(err))
+                setEmail("")
+            }
+        })()
+        */
         const response = await fetch('http://localhost:3001/api/creategroup', {
 			method: 'POST',
 			headers: {
@@ -57,6 +76,7 @@ export default function CreateGroupForm() {
 				...formValues,
                 earliestDate: dateValue[0],
                 latestDate: dateValue[1],
+                user: 'testUserID'
 			}),
 		})
 
@@ -64,8 +84,8 @@ export default function CreateGroupForm() {
 
 		if (data.status === 'ok') {
 			localStorage.setItem("token", data.user)
-			alert("Group creation successful")
-			window.location.href = "/dashboard"
+			alert("Group creation successful: " + data.id)
+			window.location.href ="/individualform"
 		} else {
             console.log(data.status)
 			alert("Please fix the errors before continuing")
@@ -73,43 +93,14 @@ export default function CreateGroupForm() {
       };
 
     return (
-<<<<<<< Updated upstream
-        <div style={{padding: '40px'}}>
-            <h1>Create Group Form</h1>
-=======
         <div>
-            <div className='navyBG'>
-                <NavBar/>
-                <h1>Create Group Form</h1>
->>>>>>> Stashed changes
+            <NavBar/>
+            <h1>Create Group Form</h1>
 
-                <form onSubmit={handleSubmit}>
-                    <Grid container alignItems="left" justify="left" direction="column" style={{padding: '40px'}}>
-
-<<<<<<< Updated upstream
-                    <Grid item style={{padding: '20px'}}>
-                    <TextField
-                        id="name-input"
-                        name="groupName"
-                        label="Group Name"
-                        type="text"
-                        value={formValues.groupName}
-                        onChange={handleInputChange}
-                    />
-                    </Grid>
+            <form onSubmit={handleSubmit}>
+                <Grid container alignItems="left" justify="left" direction="column" style={{padding: '40px'}}>
 
                     <Grid item style={{padding: '20px'}}>
-                    <TextField
-                        id="location-input"
-                        name="desiredLocation"
-                        label="Location (If known)"
-                        type="text"
-                        value={formValues.desiredLocation}
-                        onChange={handleInputChange}
-                    />
-                    </Grid>
-=======
-                        <Grid item style={{padding: '20px'}}>
                         <TextField
                             id="name-input"
                             name="groupName"
@@ -118,9 +109,9 @@ export default function CreateGroupForm() {
                             value={formValues.groupName}
                             onChange={handleInputChange}
                         />
-                        </Grid>
+                    </Grid>
 
-                        <Grid item style={{padding: '20px'}}>
+                    <Grid item style={{padding: '20px'}}>
                         <TextField
                             id="name-input"
                             name="creatorName"
@@ -129,9 +120,9 @@ export default function CreateGroupForm() {
                             value={creatorName}
                             onChange={(e) => setcreatorName(e.target.value)}
                         />
-                        </Grid>
+                    </Grid>
 
-                        <Grid item style={{padding: '20px'}}>
+                    <Grid item style={{padding: '20px'}}>
                         <TextField
                             id="name-input"
                             name="creatorEmail"
@@ -140,10 +131,9 @@ export default function CreateGroupForm() {
                             value={creatorEmail}
                             onChange={(e) => setcreatorEmail(e.target.value)}
                         />
-                        </Grid>
->>>>>>> Stashed changes
+                    </Grid>
 
-                        <Grid item style={{padding: '20px'}}>
+                    <Grid item style={{padding: '20px'}}>
                         <TextField
                             id="location-input"
                             name="desiredLocation"
@@ -152,47 +142,9 @@ export default function CreateGroupForm() {
                             value={formValues.desiredLocation}
                             onChange={handleInputChange}
                         />
-<<<<<<< Updated upstream
-                    </div>
-    
-                    {"$" + formValues.maxPrice}
                     </Grid>
 
-                <Grid item style={{padding: '20px'}}>
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                        <DateRangePicker
-                            startText="Earliest Date"
-                            endText="Latest Date"
-                            value={dateValue}
-                            onChange={(newValue) => {
-                            setDateValue(newValue);
-                            }}
-                            renderInput={(startProps, endProps) => (
-                            <React.Fragment>
-                                <TF {...startProps} />
-                                <Box sx={{ mx: 2 }}> to </Box>
-                                <TF {...endProps} />
-                            </React.Fragment>
-                            )}
-                        />
-                    </LocalizationProvider>
-                </Grid>
-                
-                    <Button variant="contained" color="primary" type="submit">
-                    Submit
-                    </Button>
-                </Grid>
-
-            </form>
-
-            
-
-        </div>
-    )
-=======
-                        </Grid>
-
-                        <Grid item style={{padding: '20px'}}>
+                    <Grid item style={{padding: '20px'}}>
                         <div style={{ width: "400px" }}>
                             Max Price Acceptable per person
                             <Slider
@@ -221,64 +173,64 @@ export default function CreateGroupForm() {
                         </div>
 
                         {"$" + formValues.maxPrice}
-                        </Grid>
-
-                    <Grid item style={{padding: '20px'}}>
-                        <LocalizationProvider dateAdapter={AdapterDateFns}>
-                            <DateRangePicker
-                                startText="Earliest Date"
-                                endText="Latest Date"
-                                value={dateValue}
-                                onChange={(newValue) => {
-                                setDateValue(newValue);
-                                }}
-                                renderInput={(startProps, endProps) => (
-                                <React.Fragment>
-                                    <TF {...startProps} />
-                                    <Box sx={{ mx: 2 }}> to </Box>
-                                    <TF {...endProps} />
-                                </React.Fragment>
-                                )}
-                            />
-                        </LocalizationProvider>
                     </Grid>
 
+                <Grid item style={{padding: '20px'}}>
+                    <LocalizationProvider dateAdapter={AdapterDateFns}>
+                        <DateRangePicker
+                            startText="Earliest Date"
+                            endText="Latest Date"
+                            value={dateValue}
+                            onChange={(newValue) => {
+                            setDateValue(newValue);
+                            }}
+                            renderInput={(startProps, endProps) => (
+                            <React.Fragment>
+                                <TF {...startProps} />
+                                <Box sx={{ mx: 2 }}> to </Box>
+                                <TF {...endProps} />
+                            </React.Fragment>
+                            )}
+                        />
+                    </LocalizationProvider>
+                </Grid>
 
-                    <Grid item style={{padding: '20px'}}>
+
+                <Grid item style={{padding: '20px'}}>
                     <div style={{ width: "400px" }}>
-                        Add emails of members for them to join
+                        Invite Emails
                         <TextField
                             id="emails-input"
                             name="membersEmails"
-                            label="Comma separate emails"
+                            label="emails"
                             type="text"
                             value={membersEmails}
                             onChange={(e) => setmembersEmails(e.target.value)}
                         />
                     </div>
-                    </Grid>
+                </Grid>
+                                {/*
+                                    <Grid item style={{padding: '20px'}}>
+                                        <div style={{ width: "400px" }}>
+                                            Enter a pin for your group
+                                            <TextField
+                                                id="secured-pin"
+                                                name="securedPin"
+                                                label="Secured pin"
+                                                type="text"
+                                                value={securedPin}
+                                                onChange={(e) => setsecuredPin(e.target.value)}
+                                            />
+                                        </div>
+                                    </Grid>
+                                */}
 
-                    <Grid item style={{padding: '20px'}}>
-                        <div style={{ width: "400px" }}>
-                            Enter a secured pin for your group
-                            <TextField
-                                id="secured-pin"
-                                name="securedPin"
-                                label="Secured pin"
-                                type="text"
-                                value={securedPin}
-                                onChange={(e) => setsecuredPin(e.target.value)}
-                            />
-                        </div>
-                    </Grid>
-                        <Button variant="contained" color="primary" type="submit">
-                        Submit
-                        </Button>
-                    </Grid>
-                </form>
-            </div>
-        </div>
-    </div>
+                <Button variant="contained" color="primary" type="submit">
+               Submit
+               </Button>
+           </Grid>
+       </form>
+
+   </div>
 )
->>>>>>> Stashed changes
 }
