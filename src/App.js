@@ -12,7 +12,7 @@ import IndividualForm from './Components/IndividualFormSteps/IndividualForm'
 
 const App = () => {
 	return (
-		<div>
+		<div className='navyBG'>
 			<BrowserRouter>
                 <HeaderBar />
                 <Routes>
