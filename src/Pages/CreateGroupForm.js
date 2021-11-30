@@ -10,6 +10,7 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import Box from '@mui/material/Box';
 import NavBar from '../Components/NavBar.js';
 import emailjs from "emailjs-com";
+import './Global.css';
 
 const defaultValues = {
     groupName: "",
