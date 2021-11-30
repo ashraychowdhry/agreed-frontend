@@ -93,12 +93,11 @@ export default function CreateGroupForm() {
 
     return (
         <div>
+            <div className='blueBG'>
             <NavBar/>
-            <h1>Create Group Form</h1>
-
-            <form onSubmit={handleSubmit}>
-                <Grid container alignItems="left" justify="left" direction="column" style={{padding: '40px'}}>
-
+            <form onSubmit={handleSubmit} className='menuCard'>
+                <Grid container alignItems="left" justify="left" direction="column" style={{padding: '10px'}}>
+                <h3 className='redText'>Create Group Form</h3>
                     <Grid item style={{padding: '20px'}}>
                         <TextField
                             id="name-input"
@@ -229,7 +228,7 @@ export default function CreateGroupForm() {
                </Button>
            </Grid>
        </form>
-
+    </div>
    </div>
 )
 }
