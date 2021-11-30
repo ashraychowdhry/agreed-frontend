@@ -98,8 +98,8 @@ export default function CreateGroupForm() {
             <form onSubmit={handleSubmit} className='menuCard'>
                 <Grid container alignItems="left" justify="left" direction="column" style={{padding: '10px'}}>
                 <h3 className='redText'>Create Group Form</h3>
-                    <Grid item style={{padding: '20px'}}>
-                        <TextField
+                    <Grid className='centerHorizontal'>
+                        <TextField item style={{width: 350}}
                             id="name-input"
                             name="groupName"
                             label="Group Name"
@@ -108,31 +108,31 @@ export default function CreateGroupForm() {
                             onChange={handleInputChange}
                         />
                     </Grid>
+                    <div className='centerHorizontal'>
+                        <Grid item style={{padding: '5px'}}>
+                            <TextField
+                                id="name-input"
+                                name="creatorName"
+                                label="Creator Name"
+                                type="text"
+                                value={creatorName}
+                                onChange={(e) => setcreatorName(e.target.value)}
+                            />
+                        </Grid>
 
-                    <Grid item style={{padding: '20px'}}>
-                        <TextField
-                            id="name-input"
-                            name="creatorName"
-                            label="Creator Name"
-                            type="text"
-                            value={creatorName}
-                            onChange={(e) => setcreatorName(e.target.value)}
-                        />
-                    </Grid>
-
-                    <Grid item style={{padding: '20px'}}>
-                        <TextField
-                            id="name-input"
-                            name="creatorEmail"
-                            label="Creator Email"
-                            type="text"
-                            value={creatorEmail}
-                            onChange={(e) => setcreatorEmail(e.target.value)}
-                        />
-                    </Grid>
-
-                    <Grid item style={{padding: '20px'}}>
-                        <TextField
+                        <Grid item style={{padding: '5px'}}>
+                            <TextField
+                                id="name-input"
+                                name="creatorEmail"
+                                label="Creator Email"
+                                type="text"
+                                value={creatorEmail}
+                                onChange={(e) => setcreatorEmail(e.target.value)}
+                            />
+                        </Grid>
+                    </div>
+                    <Grid className='centerHorizontal'>
+                        <TextField item style={{width: 350}}
                             id="location-input"
                             name="desiredLocation"
                             label="Location (If known)"
@@ -141,8 +141,8 @@ export default function CreateGroupForm() {
                             onChange={handleInputChange}
                         />
                     </Grid>
-
-                    <Grid item style={{padding: '20px'}}>
+                <div item style={{height: 20}}></div>
+                    <Grid className='centerHorizontal'>
                         <div style={{ width: "400px" }}>
                             Max Price Acceptable per person
                             <Slider
@@ -173,7 +173,7 @@ export default function CreateGroupForm() {
                         {"$" + formValues.maxPrice}
                     </Grid>
 
-                <Grid item style={{padding: '20px'}}>
+                <Grid className='centerHorizontal'>
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                         <DateRangePicker
                             startText="Earliest Date"
@@ -194,13 +194,12 @@ export default function CreateGroupForm() {
                 </Grid>
 
 
-                <Grid item style={{padding: '20px'}}>
-                    <div style={{ width: "400px" }}>
-                        Invite Emails
-                        <TextField
+                <Grid className='centerHorizontal'>
+                    <div className='centerHorizontal'>
+                        <TextField item style={{width: 350}}
                             id="emails-input"
                             name="membersEmails"
-                            label="emails"
+                            label="Send Invite Emails"
                             type="text"
                             value={membersEmails}
                             onChange={(e) => setmembersEmails(e.target.value)}
@@ -222,6 +221,8 @@ export default function CreateGroupForm() {
                                         </div>
                                     </Grid>
                                 */}
+
+                <div item style={{height: 20}}></div>
 
                 <Button variant="contained" color="primary" type="submit">
                Submit

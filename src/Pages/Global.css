@@ -50,3 +50,12 @@
 .greyText {
 	color: #ebebeb;
 }
+
+.centerHorizontal {
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	gap: 4px;
+	padding: 5px;
+	grid-auto-flow: column;
+}
