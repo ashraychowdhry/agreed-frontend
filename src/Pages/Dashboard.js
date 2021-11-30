@@ -53,9 +53,9 @@ const Dashboard = () => {
 				</div>
 				<h4 className='creategroup-prompt'>Need to plan a new trip? <a href='/creategroupform'>Create a group</a></h4>
 			</div>
-			
-			//<Button variant="contained" color="secondary" href='/individualform'>Individual Form</Button>
-			//<Button variant="contained" color="secondary" href='/creditcard'>Credit Card Payment</Button>
+
+			// <Button variant="contained" color="secondary" href='/individualform'>Individual Form</Button>
+			// <Button variant="contained" color="secondary" href='/creditcard'>Credit Card Payment</Button>
 
 		</div>
 
