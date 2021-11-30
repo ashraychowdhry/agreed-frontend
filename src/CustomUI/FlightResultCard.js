@@ -1,11 +1,13 @@
 import React from 'react'
+import './FlightResultCard.css';
+
 
 export default function FlightResultCard(props) {
     return (
-        <div>
+        <div className='cardStyle'>
             <div className="card">
                 <div>
-                    {props.personName}
+                    <b>{props.personName}</b>
                 </div>
                 <div>
                    {props.flightResult}
