@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes} from 'react-router-dom'
 import Login from './Pages/LandingLogin'
 import Register from './Pages/Register'
 import Dashboard from './Pages/Dashboard'
@@ -19,16 +19,47 @@ const App = () => {
                     <Route path='/' element={<Landing />} />
                     <Route path="/login" element={<Login/>} />
                     <Route path="/register" element={<Register/>} />
-                    <Route path="/dashboard" element={<Dashboard/>} />
                     <Route path="/aboutus" element={<AboutUs/>} />
-                    <Route path="/creategroupform" element={<CreateGroupForm/>} />
-                    <Route path="/individualform" element={<IndividualForm/>} />
-                    <Route path="/creditcard" element={<CreditCard/>} />
+                    <Route path="/dashboard" element={
+                        localStorage.getItem("token") ? (
+                            <Dashboard/>
+                        ) : (
+                            <Login/>
+                        )} 
+                    />
+                    <Route path="/creategroupform" element={
+                        localStorage.getItem("token") ? (
+                            <CreateGroupForm />
+                        ) : (
+                            <Login/>
+                        )} 
+                    />
+                    <Route path="/individualform" element={
+                        localStorage.getItem("token") ? (
+                            <IndividualForm />
+                        ) : (
+                            <Login/>
+                        )} 
+                    />
+                    <Route path="/creditcard" element={
+                        localStorage.getItem("token") ? (
+                            <CreditCard />
+                        ) : (
+                            <Login/>
+                        )} 
+                    />
                     <Route path='*' element={<PageNotFoundPage />} />
                 </Routes>
 			</BrowserRouter>
+
+
+            
 		</div>
 	)
 }
+
+
+
+
 
 export default App

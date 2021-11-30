@@ -1,11 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import './landing.css'
 import '../styles.css'
-// import FlightQueryCaller from './FlightQueryCaller';
 
 function Login() {
+	let navigate = useNavigate();
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
+
+	useEffect(() => {
+		if (localStorage.getItem("token")) {
+		  navigate("/dashboard");
+		}
+	}, [navigate]);
 
   async function LoginUser(event) {
 		event.preventDefault()
@@ -25,6 +32,7 @@ function Login() {
 
 		if (data.user) {
 			localStorage.setItem("token", data.user)
+			localStorage.setItem("username", data.userEmail)
 			alert("Login successful")
 			window.location.href = "/dashboard"
 		} else {
