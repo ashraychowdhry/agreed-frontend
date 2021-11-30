@@ -18,6 +18,17 @@ body {
 	position: flex;
 }
 
+.grid-container {
+  display: grid; 
+  align-content: center;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  grid-template-columns: auto auto auto;
+  padding: 20px 550px 0px ;
+}
+
 .blueBG {
 	background-color: #00254a;
 	position: fixed;
