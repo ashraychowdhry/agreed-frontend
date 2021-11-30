@@ -10,9 +10,20 @@
     font-family: mr-eaves-modern, sans-serif;
     font-weight:700;
     font-style: normal;
+    text-align: center;
     letter-spacing: 2px;
     font-size: 30pt;
     color: #94031e;
+}
+
+.header-user {
+    font-family: mr-eaves-modern, sans-serif;
+    font-weight:700;
+    font-style: normal;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 20pt;
+    color: #000000;
 }
 
 .header-pin {
@@ -46,4 +57,33 @@ a[href*="/creategroupform"]:hover,
 a[href*="/creategroupform"]:active {
     text-decoration: none;
     color: #94031e;
+}
+
+.trip-cards {
+    display: grid;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+/* Float four columns side by side */
+.column {
+  width: 400px;
+  height: 200px;
+  padding: 0 20px;
+}
+
+.row {margin: 0 auto;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
 }
