@@ -8,7 +8,7 @@ function NavBar() {
     async function logout(event) {
 		localStorage.removeItem("token");
 	}
-    
+
     return (
 		<div className='navbar'>
             <div className='nav-left'>

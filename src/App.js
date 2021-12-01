@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { BrowserRouter, Route, Routes} from 'react-router-dom'
 import Login from './Pages/LandingLogin'
 import Register from './Pages/Register'
@@ -13,6 +13,7 @@ import CreditCard from './Components/CreditCard'
 import FlightQueryCaller from './Components/FlightQueryCaller'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core'
 import StripeContainer from './Components/payments/StripeContainer'
+import Confirmation from './Pages/Confirmation'
 
 
 const abeona = createMuiTheme({
@@ -28,9 +29,14 @@ const abeona = createMuiTheme({
 })
 
 
+
+
 const App = () => {
+    
+
 	return (
 		<div>
+            
 
       <ThemeProvider theme={abeona}>
 			<BrowserRouter>
@@ -45,32 +51,33 @@ const App = () => {
                             <Dashboard/>
                         ) : (
                             <Login/>
-                        )} 
+                        )}
                     />
                     <Route path="/creategroupform" element={
                         localStorage.getItem("token") ? (
                             <CreateGroupForm />
                         ) : (
                             <Login/>
-                        )} 
+                        )}
                     />
                     <Route path="/individualform" element={
                         localStorage.getItem("token") ? (
                             <IndividualForm />
                         ) : (
                             <Login/>
-                        )} 
+                        )}
                     />
                     <Route path="/creditcard" element={
                         localStorage.getItem("token") ? (
                             <CreditCard />
                         ) : (
                             <Login/>
-                        )} 
+                        )}
                     />
-                    <Route path="/searchresults/:slug" element={<FlightQueryCaller/>} />
+                    <Route path="/searchresults/:slug" element={<FlightQueryCaller />} />
+                    <Route path="/confirmation" element={<Confirmation />} />
                     <Route path='*' element={<PageNotFoundPage />} />
-                    
+
                 </Routes>
 			</BrowserRouter>
       </ThemeProvider>

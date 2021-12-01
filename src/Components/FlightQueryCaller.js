@@ -12,14 +12,16 @@ import {
   useParams
 } from "react-router-dom";
 import FlightResultCard from '../CustomUI/FlightResultCard';
+import Navbar from './NavBar';
 
 
-export default function FlightQueryCaller() {
+export default function FlightQueryCaller(props) {
 
   //curl -X GET 'https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=ATL&destinationLocationCode=EWR&departureDate=2021-12-15&adults=1&nonStop=false&max=250' -H 'Authorization: Bearer WaQUBhIPoJpfg9CdiuWsZ8Tzj4Wz'
 
-    const [response, setResponse] = useState([]);
+ 
     const [isLoaded, setIsLoaded] = useState(false);
+    const [response, setResponse] = useState([]);
 
     let { slug } = useParams();
 
@@ -33,19 +35,23 @@ export default function FlightQueryCaller() {
     const getData = async () => {
 
 
-      //"https://test.api.amadeus.com/v1/security/oauth2/token" -H "Content-Type: application/x-www-form-urlencodedd "grant_type=client_credentials&client_id=rNzRVsibA4sB2mF5Gke4nLHO1Cyp4Nth&client_secret=u8ZpLQmH7r1OlwhA"
+      // curl "https://test.api.amadeus.com/v1/security/oauth2/token"      
+      //-H "Content-Type: application/x-www-form-urlencoded"      
+      //-d "grant_type=client_credentials&client_id=rNzRVsibA4sB2mF5Gke4nLHO1Cyp4Nth&client_secret=u8ZpLQmH7r1OlwhA"
 
-      /*
+
+      
       const authTokenResponse = await fetch('https://test.api.amadeus.com/v1/security/oauth2/token', {
 			method: "POST",
 			headers: {
-				'Content-Type': 'application/x-www-form-urlencodedd',
-
+				
+        'Content-Type': 'application/x-www-form-urlencoded',
 			},
 			body: JSON.stringify({
-				'grant_type': 'client_credentials',
-        'client_id': 'rNzRVsibA4sB2mF5Gke4nLHO1Cyp4Nth',
-        'client_secret': 'u8ZpLQmH7r1OlwhA'
+				grant_type: 'client_credentials',
+        client_id: 'rNzRVsibA4sB2mF5Gke4nLHO1Cyp4Nth',
+        client_secret: 'u8ZpLQmH7r1OlwhA',
+
 			}),
 		})
 
@@ -62,7 +68,7 @@ export default function FlightQueryCaller() {
     var authToken = dataAuth.access_token
 
     var bearerKey = 'Bearer ' + authToken
-    */
+    
 
 
       const groupUsers = await fetch('http://localhost:3001/api/getgroupusersforms', {
@@ -124,7 +130,7 @@ export default function FlightQueryCaller() {
         query,
         {
           headers: {
-            'Authorization': 'Bearer wTGdFLsJ8EljoHF618kbGdauSXyG'
+            'Authorization': 'Bearer O3Kgcz7rh36qzPKTvTX0NASuddhK'
           }
         }
       );
@@ -138,6 +144,7 @@ export default function FlightQueryCaller() {
 
       console.log(userResults)
       setResponse(userResults)
+      localStorage.setItem('flights', JSON.stringify(userResults));
       setIsLoaded(true)
     };
 
@@ -156,7 +163,10 @@ export default function FlightQueryCaller() {
   }
 
     return (
-        <div>
+      <div style={{color: '#0A136C'}}>
+        <Navbar />
+        <div style={{position: 'absolute', left: '50%', top: '50%',
+        transform: 'translate(-50%, -50%)'}}>
             {/*
               loadData()
             */}
@@ -169,19 +179,24 @@ export default function FlightQueryCaller() {
                   <div className='group-list' key={i}>
                     <FlightResultCard 
                       personName={obj.userID} 
-                      departs={obj.flight.itineraries[0].segments[0].arrival.at} 
-                      arrives={obj.flight.itineraries[0].segments[0].departure.at} 
-                      startAirport={obj.flight.itineraries[0].segments[0].arrival.iataCode} 
-                      endAirport={obj.flight.itineraries[0].segments[0].departure.iataCode} 
+                      departs={obj.flight.itineraries[0].segments[0].departure.at} 
+                      arrives={obj.flight.itineraries[0].segments[0].arrival.at} 
+                      startAirport={obj.flight.itineraries[0].segments[0].departure.iataCode} 
+                      endAirport={obj.flight.itineraries[0].segments[0].arrival.iataCode} 
                       flightPrice={obj.flight.price.total} />
                   </div>
+
                 </div>
               )
             })}
 
-
-            <Button variant="contained" color="primary" href={'/booknow'}>Book Now</Button>
+            <div>
+              
+            <Button variant="contained" color="primary" href={'/confirmation'}>Book Now</Button>
             </div>
+            
+            </div>
+        </div>
         </div>
     )
 }
