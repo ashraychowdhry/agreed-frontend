@@ -13,6 +13,7 @@
     "@materials-ui/core": "^0.0.27",
     "@mui/lab": "*",
     "@mui/material": "^5.1.1",
+    "amadeus": "^5.7.1",
     "axios": "^0.24.0",
     "bootstrap": "^4.6.1",
     "cra-template": "1.1.2",

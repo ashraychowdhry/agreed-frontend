@@ -33,6 +33,37 @@ export default function FlightQueryCaller() {
     const getData = async () => {
 
 
+      //"https://test.api.amadeus.com/v1/security/oauth2/token" -H "Content-Type: application/x-www-form-urlencodedd "grant_type=client_credentials&client_id=rNzRVsibA4sB2mF5Gke4nLHO1Cyp4Nth&client_secret=u8ZpLQmH7r1OlwhA"
+
+      /*
+      const authTokenResponse = await fetch('https://test.api.amadeus.com/v1/security/oauth2/token', {
+			method: "POST",
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencodedd',
+
+			},
+			body: JSON.stringify({
+				'grant_type': 'client_credentials',
+        'client_id': 'rNzRVsibA4sB2mF5Gke4nLHO1Cyp4Nth',
+        'client_secret': 'u8ZpLQmH7r1OlwhA'
+			}),
+		})
+
+		const dataAuth = await authTokenResponse.json()
+
+		if(dataAuth.state === 'approved') {
+			console.log(dataAuth)
+			console.log('Successfully generated auth token')
+		} else {
+			console.log(dataAuth)
+			alert('Error generating Auth token')
+    }
+
+    var authToken = dataAuth.access_token
+
+    var bearerKey = 'Bearer ' + authToken
+    */
+
 
       const groupUsers = await fetch('http://localhost:3001/api/getgroupusersforms', {
 			method: "POST",
@@ -93,7 +124,7 @@ export default function FlightQueryCaller() {
         query,
         {
           headers: {
-            'Authorization': 'Bearer QxGBZwGq4En5DlHSjFLoSNOTMQ0i'
+            'Authorization': 'Bearer wTGdFLsJ8EljoHF618kbGdauSXyG'
           }
         }
       );
