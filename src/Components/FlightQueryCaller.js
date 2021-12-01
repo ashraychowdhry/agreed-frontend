@@ -40,7 +40,7 @@ export default function FlightQueryCaller(props) {
       //-d "grant_type=client_credentials&client_id=rNzRVsibA4sB2mF5Gke4nLHO1Cyp4Nth&client_secret=u8ZpLQmH7r1OlwhA"
 
 
-      
+    /*  
       const authTokenResponse = await fetch('https://test.api.amadeus.com/v1/security/oauth2/token', {
 			method: "POST",
 			headers: {
@@ -70,7 +70,7 @@ export default function FlightQueryCaller(props) {
     var bearerKey = 'Bearer ' + authToken
     
 
-
+*/
       const groupUsers = await fetch(' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/getgroupusersforms', {
 			method: "POST",
 			headers: {
