@@ -24,10 +24,12 @@
     letter-spacing: 2px;
     font-size: 20pt;
     color: #000000;
+    margin-bottom: 50px;
 }
 
 .header-pin {
     margin-top: 50px;
+    margin-bottom: 20px;
     font-family: mr-eaves-modern, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -60,13 +62,12 @@ a[href*="/creategroupform"]:active {
 }
 
 .trip-cards {
-    display: grid;
-    justify-content: center;
-    margin-top: 175px;
+    margin-top: 100px;
 }
 
 .column {
-    width: 350px;
+    width: 400px;
+
     padding: 0 20px;
 }
 
@@ -78,12 +79,19 @@ a[href*="/creategroupform"]:active {
     content: "";
     display: table;
     clear: both;
+    padding: 20px 20px;
 }
 
 .card {
+    box-sizing: content-box;
+    width: 350px;
     height: 200px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     text-align: center;
     background-color: #f1f1f1;
+}
+
+.spacer {
+    margin-top: 15px;
 }
