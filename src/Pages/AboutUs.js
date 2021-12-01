@@ -41,11 +41,11 @@ export default function AboutUs() {
                     Traveling with friends and family should be fun...
                 </h5>
                 <br></br>
-                
+
                 <h5 item style={{fontStyle: 'italic', paddingLeft: 40, paddingBottom: 20}}>
                     Just fun.
                 </h5>
-                
+
                 <p item style={{paddingLeft: 40, paddingRight: 40}}>
                     We all want to share adventures with the people we love.
                     But the effort and stress of planning moments of connection
