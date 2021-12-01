@@ -1,0 +1,24 @@
+@import url("https://use.typekit.net/ozp1nzr.css");
+@import url("https://use.typekit.net/ozp1nzr.css");
+
+.background {
+    background-color: #002f4a;
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 10px;
+
+}
+
+.grid-container {
+  display: grid; 
+  align-content: center;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  grid-template-columns: auto auto auto;
+  padding: 20px 550px 0px ;
+}

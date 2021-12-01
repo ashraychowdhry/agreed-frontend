@@ -14,11 +14,13 @@ export default function FlightQueryCaller() {
   useEffect(() => {
     const getData = async () => {
 
+      
+
       const data = await axios.get(
         "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=ATL&destinationLocationCode=EWR&departureDate=2021-12-15&adults=1&nonStop=false&max=250",
         {
           headers: {
-            'Authorization': 'Bearer rIGBmIj1hjwIMugoGeGaySAPTJxl'
+            'Authorization': 'Bearer eWDRYHnrNjpmTT9AAseizZfeGSIG'
           }
         }
       );

@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import AppContext from './AppContext';
+import Button from '@material-ui/core/Button';
 import './styles.css';
 
 export default function Form3() {
@@ -39,7 +40,7 @@ export default function Form3() {
                     </select>
                     </label>
                     <button className="multipleButton" value="Previous" type="button" onClick={() => updateContext.setStep(updateContext.currentPage - 1)}>Previous </button>
-                    <button type="button" className="formSubmit" onClick={next}>Next </button>
+                    <Button type="button" className="formSubmit" variant ="contained" color ="primary" onClick={next}>Next </Button>
                 </form>
             </div>
         </div>
