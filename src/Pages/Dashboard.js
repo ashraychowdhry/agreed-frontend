@@ -70,8 +70,8 @@ const Dashboard = () => {
 		<div>
 			<NavBar/>
 			<div className='group'>
-				<h2 className='header'> Hello, {localStorage.username} </h2>
 				<h2 className='header'>Trip Dashboard</h2>
+				<h2 className='header-user'> Hello, {localStorage.username} </h2>
 				<div className='pin'>
 					<h3 className='header-pin'>Group Pin</h3>
 					<form onSubmit={joinGroup}>
@@ -88,27 +88,17 @@ const Dashboard = () => {
 				<h4 className='creategroup-prompt'>Need to plan a new trip? <a href='/creategroupform'>Create a group</a></h4>
 			</div>
 			<div className='trip-cards'>
-				<div class="row">
-					<div class="column">
-						<div class="card">..</div>
-					</div>
-					<div class="column">
-						<div class="card">..</div>
-					</div>
-					<div class="column">
-						<div class="card">..</div>
-					</div>
+				<div className='row'>
+					{groups.map((group, i) => {
+						return (
+							<div className='column'>
+								<div className='card' key={i}>
+									<Button variant="contained" onClick={localStorage.setItem("currentGroup", group.groupID)} color="primary" href='/searchresults'>{group.groupName + " " + group.groupID}</Button>
+								</div>
+							</div>
+						)
+					})}
 				</div>
-			</div>
-
-			<div>
-				{groups.map((group, i) => {
-					return (
-						<div className='group-list' key={i}>
-							<Button variant="contained" onClick={localStorage.setItem("currentGroup", group.groupID)} color="primary" href='/searchresults'>{group.groupName + " " + group.groupID}</Button>
-						</div>
-					)
-				})}
 			</div>
 		</div>
 

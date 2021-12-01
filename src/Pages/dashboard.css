@@ -66,8 +66,7 @@ a[href*="/creategroupform"]:active {
 }
 
 .column {
-    width: 400px;
-
+    width: 350px;
     padding: 0 20px;
 }
 
