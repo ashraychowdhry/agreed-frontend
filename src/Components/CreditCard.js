@@ -16,14 +16,14 @@ export default function CreditCard () {
   const updateContext = myContext.userDetails;
   const [formValues, setFormValues] = useState(defaultValues)
 
-  
+
     const handleInputFocus = (e) => {
       setFormValues ({
           ...formValues,
-          focus: e.target.name 
+          focus: e.target.name
       });
     };
-    
+
     const next = () => {
         updateContext.setStep(updateContext.currentPage + 1)
     }
