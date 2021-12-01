@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
+import NavBar from '../Components/NavBar.js';
+import './creditcard.css';
 import Button from "@material-ui/core/Button";
 
 const defaultValues = {
@@ -54,6 +56,9 @@ export default function CreditCard () {
     };
 
     return (
+    <div>
+      <div className='background '>
+      <NavBar/>
       <div id="PaymentForm">
         <Cards
           cvc={formValues.cvc}
@@ -62,14 +67,18 @@ export default function CreditCard () {
           name={formValues.name}
           number={formValues.number}
         />
+	   <div >
         <form>
-        	<input
+        <div class="grid-container"> 
+        	<input 
             type="text"
             name="name"
             placeholder="Card Name"
             onChange={handleInputChange}
             onFocus={handleInputFocus}
           />
+        </div >
+        <div class="grid-container">
           <input
             type="tel"
             name="number"
@@ -77,6 +86,8 @@ export default function CreditCard () {
             onChange={handleInputChange}
             onFocus={handleInputFocus}
           />
+        </div>
+        <div class="grid-container">
           <input
             type="tel"
             name="expiry"
@@ -84,6 +95,8 @@ export default function CreditCard () {
             onChange={handleInputChange}
             onFocus={handleInputFocus}
           />
+        </div>
+        <div class="grid-container"> 
           <input
             type="tel"
             name="cvc"
@@ -91,9 +104,14 @@ export default function CreditCard () {
             onChange={handleInputChange}
             onFocus={handleInputFocus}
           />
-
+        </div>
+        <div class="grid-container"> 
           <Button variant="contained" color="primary" type="submit" onClick={handleSubmit}> Submit </Button>
+        </div>
         </form>
       </div>
+    </div>
+    </div>
+    </div>
     );
   }
