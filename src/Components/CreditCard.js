@@ -30,63 +30,62 @@ export default function CreditCard () {
 
     return (
     <div>
-      <div className='background '>
-      <NavBar/>
+      
+      
       <div id="PaymentForm">
-        <Cards
+        
+        <div>
+          <form>
+            <div style={{paddingTop: '20px'}}> 
+              <input 
+                type="text"
+                name="name"
+                placeholder="Card Name"
+                onChange={e => updateContext.setName(e.target.value)}
+                onFocus={handleInputFocus}
+              />
+            </div >
+            <div class="">
+              <input
+                type="tel"
+                name="number"
+                placeholder="Card Number"
+                onChange={e => updateContext.setNumber(e.target.value)}
+                onFocus={handleInputFocus}
+              />
+            </div>
+            <div class="">
+              <input
+                type="tel"
+                name="expiry"
+                placeholder="Expiry"
+                onChange={e => updateContext.setExpiry(e.target.value)}
+                onFocus={handleInputFocus}
+              />
+            </div>
+            <div class=""> 
+                <input
+                  type="tel"
+                  name="cvc"
+                  placeholder="CVV"
+                  onChange={e => updateContext.setcvc(e.target.value)}
+                  onFocus={handleInputFocus}
+                />
+            </div>
+            <Button variant="contained" color="primary" type="submit" onClick={next}> Next </Button>
+          </form>
+        <div  style={{paddingTop: '20px'}}>
+
+        </div>
+          <Cards
           cvc={updateContext.cvc}
           expiry={updateContext.expiry}
           focused={updateContext.focus}
           name={updateContext.name}
           number={updateContext.number}
         />
-	   <div >
-        <form>
-        <div class="grid-container"> 
-        	<input 
-            type="text"
-            name="name"
-            placeholder="Card Name"
-            onChange={e => updateContext.setName(e.target.value)}
-            onFocus={handleInputFocus}
-          />
-        </div >
-        <div class="grid-container">
-          <input
-            type="tel"
-            name="number"
-            placeholder="Card Number"
-            onChange={e => updateContext.setNumber(e.target.value)}
-            onFocus={handleInputFocus}
-          />
         </div>
-        <div class="grid-container">
-          <input
-            type="tel"
-            name="expiry"
-            placeholder="Expiry"
-            onChange={e => updateContext.setExpiry(e.target.value)}
-            onFocus={handleInputFocus}
-          />
-        </div>
-        <div class="grid-container"> 
-          <input
-            type="tel"
-            name="cvc"
-            placeholder="CVV"
-            onChange={e => updateContext.setcvc(e.target.value)}
-            onFocus={handleInputFocus}
-          />
-        </div>
-       <Button variant="contained" color="primary" type="submit" onClick={next}> Next </Button>
-//         <div class="grid-container"> 
-//           <Button variant="contained" color="primary" type="submit" onClick={handleSubmit}> Submit </Button>
-//         </div>
-
-        </form>
       </div>
-    </div>
-    </div>
     </div>
     );
   }

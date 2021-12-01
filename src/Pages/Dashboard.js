@@ -93,7 +93,8 @@ const Dashboard = () => {
 				<h4 className='creategroup-prompt'>Need to plan a new trip? <a href='/creategroupform'>Create a group</a></h4>
 			</div>
 
-			<div>
+			<div className='trip-cards'>
+				<div className='row'>
 				{groups.map((group, i) => {
 					return (
 						<div>
@@ -105,6 +106,7 @@ const Dashboard = () => {
 							</div>
 						)
 					})}
+					</div>
 				</div>
 			</div>
 	);
