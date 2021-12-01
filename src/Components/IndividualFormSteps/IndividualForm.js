@@ -6,6 +6,7 @@ import Form2 from './Form2'
 import Form3 from './Form3'
 import SubmitForm from './SubmitForm'
 import Progress from './Progress'
+import CreditCard from '../CreditCard'
 import NavBar from '../NavBar.js';
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
@@ -15,7 +16,6 @@ import TF from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import { Content } from 'react-bootstrap/lib/Tab';
 
-
 export default function IndividualForm() {
     const [step, setStep] = useState(0);
     const [budget, setBudget] = useState('')
@@ -24,9 +24,17 @@ export default function IndividualForm() {
     const [flightPreference, setFlightPreference] = useState('')
     const [arriveOn, setArrivalDate] = useState('')
     const [departOn, setDepartureDate] = useState('')
+    const [earliestDate, setEarliestDate] = useState(null)
+    const [latestDate, setLatestDate] = useState(null)
+    const [cvc, setcvc] = useState('')
+    const [expiry, setExpiry] = useState('')
+    const [name, setName] = useState('')
+    const [number, setNumber] = useState('')
     const [originAirport, setOriginAirport] = useState('')
 
     const userDetails = {
+        earliest: earliestDate,
+        latest: latestDate,
         currentPage: step,
         maxPrice: budget,
         airline: flightPreference,
@@ -34,6 +42,16 @@ export default function IndividualForm() {
         departure: departureTime,
         arrivalDate: arriveOn,
         departureDate: departOn,
+        cvc,
+        expiry,
+        name,
+        number,
+        setcvc,
+        setExpiry,
+        setName,
+        setNumber,
+        setEarliestDate,
+        setLatestDate,
         originAirport: originAirport,
         setBudget,
         setFlightPreference,
@@ -58,7 +76,8 @@ export default function IndividualForm() {
                             {step === 0 && <Form1 /> } 
                             {step === 1 && <Form2 /> }
                             {step === 2 && <Form3 /> }
-                            {step === 3 && <SubmitForm /> }
+                            {step === 3 && <CreditCard /> }
+                            {step === 4 && <SubmitForm /> }
                         </div>
                         
                             

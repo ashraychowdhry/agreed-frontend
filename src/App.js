@@ -11,10 +11,27 @@ import CreateGroupForm from './Pages/CreateGroupForm'
 import IndividualForm from './Components/IndividualFormSteps/IndividualForm'
 import CreditCard from './Components/CreditCard'
 import FlightQueryCaller from './Components/FlightQueryCaller'
+import { createMuiTheme, ThemeProvider } from '@material-ui/core'
+
+
+const abeona = createMuiTheme({
+	palette: {
+		primary: {
+			main:'#00254a'
+		},
+		secondary: {
+			main:'#94031e'
+		}
+
+	}
+})
+
 
 const App = () => {
 	return (
 		<div>
+
+      <ThemeProvider theme={abeona}>
 			<BrowserRouter>
                 <Routes>
                     <Route path='/' element={<Landing />} />
@@ -54,9 +71,9 @@ const App = () => {
                     
                 </Routes>
 			</BrowserRouter>
+      </ThemeProvider>
 
 
-            
 		</div>
 	);
 }
