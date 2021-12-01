@@ -28,6 +28,9 @@ export default function Form1() {
                     <input className="formInput" type="text" placeholder="Budget for Flight" onChange={e => updateContext.setBudget(e.target.value)} required/>
                     </div>
                     <div> 
+                    <input className="formInput" type="text" placeholder="Origin Airport" onChange={e => updateContext.setOriginAirport(e.target.value)} required/>
+                    </div>
+                    <div> 
                     <Button type="button" variant ="contained" className="formSubmit" color ="primary" onClick={next} >Next</Button>
                     </div>
             </form>

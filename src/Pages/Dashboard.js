@@ -91,8 +91,11 @@ const Dashboard = () => {
 			<div>
 				{groups.map((group, i) => {
 					return (
-						<div className='group-list' key={i}>
-							<Button variant="contained" onClick={localStorage.setItem("currentGroup", group.groupID)} color="primary" href='/searchresults'>{group.groupName + " " + group.groupID}</Button>
+						<div>
+
+							<div className='group-list' key={i}>
+								<Button variant="contained" onClick={localStorage.setItem("currentGroup", group.groupID)} color="primary" href={'/searchresults/'+group.groupID}>{group.groupName + " " + group.groupID}</Button>
+							</div>
 						</div>
 					)
 				})}

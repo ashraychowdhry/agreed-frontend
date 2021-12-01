@@ -49,7 +49,7 @@ const App = () => {
                             <Login/>
                         )} 
                     />
-                    <Route path="/searchresults" element={<FlightQueryCaller/>} />
+                    <Route path="/searchresults/:slug" element={<FlightQueryCaller/>} />
                     <Route path='*' element={<PageNotFoundPage />} />
                     
                 </Routes>

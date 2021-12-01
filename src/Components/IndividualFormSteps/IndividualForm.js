@@ -24,6 +24,7 @@ export default function IndividualForm() {
     const [flightPreference, setFlightPreference] = useState('')
     const [arriveOn, setArrivalDate] = useState('')
     const [departOn, setDepartureDate] = useState('')
+    const [originAirport, setOriginAirport] = useState('')
 
     const userDetails = {
         currentPage: step,
@@ -33,6 +34,7 @@ export default function IndividualForm() {
         departure: departureTime,
         arrivalDate: arriveOn,
         departureDate: departOn,
+        originAirport: originAirport,
         setBudget,
         setFlightPreference,
         setArrivalTime,
@@ -40,6 +42,7 @@ export default function IndividualForm() {
         setStep,
         setArrivalDate,
         setDepartureDate,
+        setOriginAirport,
     };
     
     return (
