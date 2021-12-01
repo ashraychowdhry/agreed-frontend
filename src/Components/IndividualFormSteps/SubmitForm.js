@@ -25,7 +25,7 @@ export default function SubmitForm() {
     const expiry = updateContext.expiry
     const name = updateContext.name
     const number = updateContext.number
-
+    const originAirport = updateContext.originAirport
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -50,6 +50,7 @@ export default function SubmitForm() {
                 expiration: expiry,
                 cvv: cvc,
                 cardholder_name: name,
+                originAirport: originAirport
 			}),
 		})
 

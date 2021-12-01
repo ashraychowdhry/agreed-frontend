@@ -3,3 +3,70 @@
 body {
 	background-color: #00254a;
 }
+
+.menuCard {
+	box-shadow: 3px 3px 4px 2px #888888;
+	background-color: #efefef;
+	margin-bottom: auto;
+	margin-top: auto;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	overflow: hidden;
+	width: 600px;
+	height: 600px;
+	position: flex;
+}
+
+.individualFormCard {
+	box-shadow: 3px 3px 4px 2px #888888;
+	background-color: #efefef;
+	margin-bottom: auto;
+	margin-top: auto;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	width: 600px;
+	height: 300px;
+	position: flex;
+}
+
+.grid-container {
+	display: grid;
+	align-content: center;
+	margin-bottom: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: auto;
+	grid-template-columns: auto auto auto;
+	padding: 20px 550px 0px;
+}
+
+.blueBG {
+	background-color: #00254a;
+	position: fixed;
+	min-width: 100%;
+	min-height: 100%;
+	background-size: cover;
+	background-position: center;
+}
+
+.redBG {
+	background-color: #9a031e;
+}
+
+.greyBG {
+	background-color: #ebebeb;
+}
+
+.redText {
+	color: #9a031e;
+}
+
+.blueText {
+	color: #00254a;
+}
+
+.greyText {
+	color: #ebebeb;
+}

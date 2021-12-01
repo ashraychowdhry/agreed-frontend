@@ -1,0 +1,94 @@
+.cardStyle {
+  box-shadow: 3px 3px 4px 2px #888888;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  overflow: hidden;
+  width: 320px;
+}
+
+.menuCard {
+  box-shadow: 3px 3px 4px 2px #888888;
+  background-color: #efefef;
+  margin-bottom: auto;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  overflow: hidden;
+  width: 600px;
+  height: 600px;
+  position: flex;
+}
+
+.aboutMenuCard {
+  box-shadow: 3px 3px 4px 2px #888888;
+  background-color: #efefef;
+  margin-bottom: auto;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  overflow: hidden;
+  width: 600px;
+  height: 400px;
+  position: flex;
+}
+
+.mediumMenuCard {
+  box-shadow: 3px 3px 4px 2px #888888;
+  background-color: #efefef;
+  margin-bottom: auto;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  overflow: hidden;
+  width: 600px;
+  height: 300px;
+  position: flex;
+}
+
+.blueBG {
+  background-color: #00254a;
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.redBG {
+  background-color: #9a031e;
+}
+
+.greyBG {
+  background-color: #ebebeb;
+}
+
+.redText {
+  color: #9a031e;
+}
+
+.blueText {
+  color: #00254a;
+}
+
+.greyText {
+  color: #ebebeb;
+}
+
+.centerHorizontal {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 4px;
+  padding: 5px;
+  grid-auto-flow: column;
+}
+
+.buttonRedBig {
+  color: #9a031e;
+  width: 350px;
+}

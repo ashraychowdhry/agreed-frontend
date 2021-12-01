@@ -10,10 +10,17 @@ export default function FlightResultCard(props) {
                     <b>{props.personName}</b>
                 </div>
                 <div>
-                   {props.flightResult}
+                   <h4>{props.departs} - {props.arrives}</h4>
+                   
+                   <h4>{props.startAirport} - {props.endAirport}</h4>
+                   
+                   {props.flightPrice}
                 </div>
             </div>
         </div>
         
     )
 }
+
+                      
+                      

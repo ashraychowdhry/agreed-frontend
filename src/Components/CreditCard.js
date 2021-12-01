@@ -1,6 +1,8 @@
 import React, {useState, useContext} from 'react';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
+import NavBar from '../Components/NavBar.js';
+import './creditcard.css';
 import Button from "@material-ui/core/Button";
 import AppContext from "./IndividualFormSteps/AppContext";
 
@@ -27,6 +29,9 @@ export default function CreditCard () {
     }
 
     return (
+    <div>
+      <div className='background '>
+      <NavBar/>
       <div id="PaymentForm">
         <Cards
           cvc={updateContext.cvc}
@@ -35,14 +40,18 @@ export default function CreditCard () {
           name={updateContext.name}
           number={updateContext.number}
         />
+	   <div >
         <form>
-        	<input
+        <div class="grid-container"> 
+        	<input 
             type="text"
             name="name"
             placeholder="Card Name"
             onChange={e => updateContext.setName(e.target.value)}
             onFocus={handleInputFocus}
           />
+        </div >
+        <div class="grid-container">
           <input
             type="tel"
             name="number"
@@ -50,6 +59,8 @@ export default function CreditCard () {
             onChange={e => updateContext.setNumber(e.target.value)}
             onFocus={handleInputFocus}
           />
+        </div>
+        <div class="grid-container">
           <input
             type="tel"
             name="expiry"
@@ -57,6 +68,8 @@ export default function CreditCard () {
             onChange={e => updateContext.setExpiry(e.target.value)}
             onFocus={handleInputFocus}
           />
+        </div>
+        <div class="grid-container"> 
           <input
             type="tel"
             name="cvc"
@@ -64,8 +77,16 @@ export default function CreditCard () {
             onChange={e => updateContext.setcvc(e.target.value)}
             onFocus={handleInputFocus}
           />
-          <Button variant="contained" color="primary" type="submit" onClick={next}> Next </Button>
+        </div>
+       <Button variant="contained" color="primary" type="submit" onClick={next}> Next </Button>
+//         <div class="grid-container"> 
+//           <Button variant="contained" color="primary" type="submit" onClick={handleSubmit}> Submit </Button>
+//         </div>
+
         </form>
       </div>
+    </div>
+    </div>
+    </div>
     );
   }

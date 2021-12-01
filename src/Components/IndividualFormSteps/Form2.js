@@ -1,5 +1,6 @@
 import React, {useContext, useState} from 'react';
 import AppContext from "./AppContext"
+import Button from '@material-ui/core/Button';
 import './styles.css';
 
 import Grid from "@material-ui/core/Grid";
@@ -55,7 +56,7 @@ export default function Form2() {
                     </Grid>
                     <div className="multipleButtons">
                     <button className="multipleButton" value="Previous" type="button" onClick={() => updateContext.setStep(updateContext.currentPage - 1)}>Previous </button>
-                    <button className="multipleButton" value="Next" type="button" onClick={next}>Next </button>
+                    <Button className="multipleButton" variant ="contained" color ="primary" value="Next" type="button" onClick={next}>Next </Button>
                     </div>
                 </form>
             </div>
