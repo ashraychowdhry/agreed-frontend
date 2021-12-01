@@ -65,7 +65,6 @@ a[href*="/creategroupform"]:active {
     margin-top: 200px;
 }
 
-/* Float four columns side by side */
 .column {
   width: 400px;
   height: 200px;
