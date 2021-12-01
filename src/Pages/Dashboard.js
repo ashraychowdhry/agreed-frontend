@@ -8,6 +8,7 @@ import './dashboard.css';
 import TextField from '@mui/material/TextField';
 import { borders } from '@mui/system';
 
+
 const Dashboard = () => {
 	const [securedPin, setsecuredPin] = useState('')
 	const [groups, setGroups] = useState([])
@@ -69,7 +70,7 @@ const Dashboard = () => {
 	}, [])
 
 	return (
-		<div>
+		<div className='dash-background'>
 			<NavBar/>
 			<div className='group'>
 
@@ -79,7 +80,7 @@ const Dashboard = () => {
 				<div className='pin'>
 
 					<form onSubmit={joinGroup}>
-						<TextField id="outlined-basic" label="Group Pin" variant="outlined" style={{ minWidth: '225px', borderRadius: '50px' }}
+						<TextField id="outlined-basic" label="Group Pin#" variant="outlined" style={{ minWidth: '225px', borderRadius: '50px' }}
 							value={securedPin}
 							onChange={(e) => setsecuredPin(e.target.value)}
 							type= "text"
@@ -92,14 +93,14 @@ const Dashboard = () => {
 				</div>
 				<h4 className='creategroup-prompt'>Need to plan a new trip? <a href='/creategroupform'>Create a group</a></h4>
 			</div>
-
 			<div className='trip-cards'>
 				<div className='row'>
 				{groups.map((group, i) => {
 					return (
 						<div className='column'>
 							<div className='card' key={i}>
-								<Button variant="contained" onClick={localStorage.setItem("currentGroup", group.groupID)} color="primary" href={'/searchresults/'+group.groupID}>{group.groupName + " " + group.groupID}</Button>
+								<div className='trip-button'><Button variant="text" onClick={localStorage.setItem("currentGroup", group.groupID)} color="primary" href={'/searchresults/'+group.groupID} style={{ color: '#00254a' }}>{group.groupName + " " + group.groupID}</Button></div>
+								<div className='travel-pic'></div>
 							</div>
 						</div>
 						)

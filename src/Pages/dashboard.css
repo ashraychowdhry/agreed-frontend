@@ -1,6 +1,13 @@
 @import url("https://use.typekit.net/ozp1nzr.css");
 @import url("https://use.typekit.net/ozp1nzr.css");
 
+.dash-background {
+    background-color: #efefef;
+    position: relative;
+    overflow: hidden;
+
+}
+
 .group {
     display: table;
     margin: 25px auto;
@@ -63,34 +70,45 @@ a[href*="/creategroupform"]:active {
 
 .trip-cards {
     margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .column {
-    width: 400px;
-
-    padding: 0 20px;
-}
-
-.row {margin: 0 auto;
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
     padding: 20px 20px;
+}
+
+.row {
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 }
 
 .card {
     box-sizing: content-box;
-    width: 350px;
+    width: 300px;
     height: 200px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
     padding: 16px;
     text-align: center;
     background-color: #f1f1f1;
+    border-radius: 15px;
 }
 
 .spacer {
     margin-top: 15px;
+}
+
+.travel-pic {
+    background-image: url("../assets/travelpics/lake.jpg");
+    position: relative;
+    height: 180px;
+    width: 280px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
 }

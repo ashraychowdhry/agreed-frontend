@@ -49,33 +49,33 @@ const App = () => {
                             <Dashboard/>
                         ) : (
                             <Login/>
-                        )} 
+                        )}
                     />
                     <Route path="/creategroupform" element={
                         localStorage.getItem("token") ? (
                             <CreateGroupForm />
                         ) : (
                             <Login/>
-                        )} 
+                        )}
                     />
                     <Route path="/individualform" element={
                         localStorage.getItem("token") ? (
                             <IndividualForm />
                         ) : (
                             <Login/>
-                        )} 
+                        )}
                     />
                     <Route path="/creditcard" element={
                         localStorage.getItem("token") ? (
                             <CreditCard />
                         ) : (
                             <Login/>
-                        )} 
+                        )}
                     />
                     <Route path="/searchresults/:slug" element={<FlightQueryCaller />} />
                     <Route path="/confirmation" element={<Confirmation />} />
                     <Route path='*' element={<PageNotFoundPage />} />
-                    
+
                 </Routes>
 			</BrowserRouter>
       </ThemeProvider>
