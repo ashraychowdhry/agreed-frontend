@@ -62,27 +62,28 @@ a[href*="/creategroupform"]:active {
 .trip-cards {
     display: grid;
     justify-content: center;
-    margin-top: 200px;
+    margin-top: 175px;
 }
 
 .column {
-  width: 400px;
-  height: 200px;
-  padding: 0 20px;
+    width: 350px;
+    padding: 0 20px;
 }
 
-.row {margin: 0 auto;
+.row {
+    margin: 0 auto;
 }
 
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .card {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 16px;
-  text-align: center;
-  background-color: #f1f1f1;
+    height: 200px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
 }
