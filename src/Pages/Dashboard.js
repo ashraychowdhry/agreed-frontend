@@ -31,7 +31,7 @@ const Dashboard = () => {
 			console.log(data)
 			localStorage.setItem("currentGroup", data.id)
 			alert('Successfully Joined Group ' + data.id)
-			window.location.href = "/individualform" 
+			window.location.href = "/individualform"
 		} else {
 			console.log(data)
 			alert('Please enter the right pin')
@@ -44,7 +44,7 @@ const Dashboard = () => {
 			method: "POST",
 			headers: {
 				'Content-Type': 'application/json',
-				
+
 			},
 			body: JSON.stringify({
 				userID: userID,
@@ -86,6 +86,19 @@ const Dashboard = () => {
 					</form>
 				</div>
 				<h4 className='creategroup-prompt'>Need to plan a new trip? <a href='/creategroupform'>Create a group</a></h4>
+			</div>
+			<div className='trip-cards'>
+				<div class="row">
+					<div class="column">
+						<div class="card">..</div>
+					</div>
+					<div class="column">
+						<div class="card">..</div>
+					</div>
+					<div class="column">
+						<div class="card">..</div>
+					</div>
+				</div>
 			</div>
 
 			<div>
