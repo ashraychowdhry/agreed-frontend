@@ -97,9 +97,9 @@ function Login() {
 							<input
 								type="button"
 								value="Register"
-								onClick={togglePopup}
+								href="/register"
 							/>
-							{isOpen && <Popup
+							{/*isOpen && <Popup
 								content={<>
 									<div className='registerPopup'>
 									    <h1>Register</h1>
@@ -132,12 +132,12 @@ function Login() {
 													placeholder="Password"
 												/>
 												<br />
-												<input type="submit" value="Register" />
+												<input type="submit" vae="Register" />
 											</form>
 									</div>
-								</>}
+								</>*
 								handleClose={togglePopup}
-							/>}
+								/>*/}
 						</h4>
 					</div>
 				</form>
