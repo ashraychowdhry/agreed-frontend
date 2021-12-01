@@ -12,6 +12,7 @@ import IndividualForm from './Components/IndividualFormSteps/IndividualForm'
 import CreditCard from './Components/CreditCard'
 import FlightQueryCaller from './Components/FlightQueryCaller'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core'
+import StripeContainer from './Components/payments/StripeContainer'
 import Confirmation from './Pages/Confirmation'
 
 
@@ -44,6 +45,7 @@ const App = () => {
                     <Route path="/login" element={<Login/>} />
                     <Route path="/register" element={<Register/>} />
                     <Route path="/aboutus" element={<AboutUs/>} />
+                    <Route path="/stripe" element={<StripeContainer/>} />
                     <Route path="/dashboard" element={
                         localStorage.getItem("token") ? (
                             <Dashboard/>

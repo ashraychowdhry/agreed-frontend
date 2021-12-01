@@ -20,7 +20,7 @@ export default function Form3() {
 
     return (
         <div className="container">
-            <p>Enter your vehicle details</p>
+            <p>Enter your details</p>
             <div className="formContainer">
                 <form className="form">
                     <label>
@@ -39,6 +39,7 @@ export default function Form3() {
                         <option value="Night">Night</option>
                     </select>
                     </label>
+                    <input className="formInput" type="text" placeholder="TSA Precheck #" onChange={e => updateContext.setTSAprecheck(e.target.value)} required/>
                     <button className="multipleButton" value="Previous" type="button" onClick={() => updateContext.setStep(updateContext.currentPage - 1)}>Previous </button>
                     <Button type="button" className="formSubmit" variant ="contained" color ="primary" onClick={next}>Next </Button>
                 </form>

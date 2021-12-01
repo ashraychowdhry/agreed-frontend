@@ -31,6 +31,7 @@ export default function IndividualForm() {
     const [name, setName] = useState('')
     const [number, setNumber] = useState('')
     const [originAirport, setOriginAirport] = useState('')
+    const [tsaprecheck, setTSAprecheck] = useState('')
 
     const userDetails = {
         earliest: earliestDate,
@@ -46,6 +47,8 @@ export default function IndividualForm() {
         expiry,
         name,
         number,
+        tsaprecheck, 
+        setTSAprecheck,
         setcvc,
         setExpiry,
         setName,
