@@ -18,7 +18,7 @@ export default function FlightQueryCaller() {
         "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=ATL&destinationLocationCode=EWR&departureDate=2021-12-15&adults=1&nonStop=false&max=250",
         {
           headers: {
-            'Authorization': 'Bearer dhjZ3ybXGCLOmY9fijZAfrvD1gkQ'
+            'Authorization': 'Bearer rIGBmIj1hjwIMugoGeGaySAPTJxl'
           }
         }
       );
