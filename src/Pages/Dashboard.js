@@ -72,6 +72,7 @@ const Dashboard = () => {
 		<div>
 			<NavBar/>
 			<div className='group'>
+			
 				<h2 className='header'>Trip Dashboard</h2>
 
 				<h3 className='header-user'> Hello, {localStorage.username}! Let's get travelling.</h3>
@@ -92,11 +93,10 @@ const Dashboard = () => {
 				<h4 className='creategroup-prompt'>Need to plan a new trip? <a href='/creategroupform'>Create a group</a></h4>
 			</div>
 
-			<div className='trip-cards'>
-				<div className='row'>
-					{groups.map((group, i) => {
-						return (
-							<div className='column'>
+			<div>
+				{groups.map((group, i) => {
+					return (
+						<div>
 
 								<div className='card' key={i}>
 									<Button variant="contained" onClick={localStorage.setItem("currentGroup", group.groupID)} color="primary" href={'/searchresults/'+group.groupID}>{group.groupName + " " + group.groupID}</Button>
