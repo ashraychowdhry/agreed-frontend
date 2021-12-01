@@ -16,14 +16,14 @@ export default function CreditCard () {
   const updateContext = myContext.userDetails;
   const [formValues, setFormValues] = useState(defaultValues)
 
-  
+
     const handleInputFocus = (e) => {
       setFormValues ({
           ...formValues,
-          focus: e.target.name 
+          focus: e.target.name
       });
     };
-    
+
     const next = () => {
         updateContext.setStep(updateContext.currentPage + 1)
     }
@@ -42,8 +42,8 @@ export default function CreditCard () {
         />
 	   <div >
         <form>
-        <div class="grid-container"> 
-        	<input 
+        <div class="grid-container">
+        	<input
             type="text"
             name="name"
             placeholder="Card Name"
@@ -69,7 +69,7 @@ export default function CreditCard () {
             onFocus={handleInputFocus}
           />
         </div>
-        <div class="grid-container"> 
+        <div class="grid-container">
           <input
             type="tel"
             name="cvc"
@@ -79,9 +79,9 @@ export default function CreditCard () {
           />
         </div>
        <Button variant="contained" color="primary" type="submit" onClick={next}> Next </Button>
-//         <div class="grid-container"> 
-//           <Button variant="contained" color="primary" type="submit" onClick={handleSubmit}> Submit </Button>
-//         </div>
+{/*         <div class="grid-container"> */}
+{/*         <Button variant="contained" color="primary" type="submit" onClick={handleSubmit}> Submit </Button> */}
+{/*       </div> */}
 
         </form>
       </div>
