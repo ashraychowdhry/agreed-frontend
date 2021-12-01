@@ -125,7 +125,7 @@ export default function FlightQueryCaller(props) {
 
 
       //https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=ATL&destinationLocationCode=EWR&departureDate=2021-12-15&adults=1&nonStop=true&currencyCode=USD&maxPrice=500&max=1
-      var query = "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=" + data1.userforms[i].originAirport + "&destinationLocationCode=" + destination + "&departureDate=" + data1.userforms[i].departure + "&adults=1&nonStop=true&currencyCode=USD&maxPrice=" + data1.userforms[i].budget + "&max=1" 
+      var query = "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=" + data1.userforms[i].originAirport + "&destinationLocationCode=" + destination + "&departureDate=" + data1.userforms[i].departure.substring(0,10) + "&adults=1&nonStop=true&currencyCode=USD&maxPrice=" + data1.userforms[i].budget + "&max=1" 
       const data = await axios.get(
         query,
         {
