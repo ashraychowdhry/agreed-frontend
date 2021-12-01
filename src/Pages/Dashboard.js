@@ -5,6 +5,8 @@ import Button from '@material-ui/core/Button';
 import Login from './LandingLogin';
 import NavBar from '../Components/NavBar.js';
 import './dashboard.css';
+import TextField from '@mui/material/TextField';
+import { borders } from '@mui/system';
 
 const Dashboard = () => {
 	const [securedPin, setsecuredPin] = useState('')
@@ -72,18 +74,23 @@ const Dashboard = () => {
 			<div className='group'>
 				<h2 className='header'> Hello, {localStorage.username} </h2>
 				<h2 className='header'>Trip Dashboard</h2>
+<<<<<<< Updated upstream
+=======
+				<h3 className='header-user'> Hello, {localStorage.username}! Let's get travelling.</h3>
+>>>>>>> Stashed changes
 				<div className='pin'>
-					<h3 className='header-pin'>Group Pin</h3>
+
 					<form onSubmit={joinGroup}>
-						<input
+						<TextField id="outlined-basic" label="Group Pin" variant="outlined" style={{ minWidth: '225px', borderRadius: '50px' }}
 							value={securedPin}
 							onChange={(e) => setsecuredPin(e.target.value)}
 							type= "text"
-							placeholder="Enter A Pin To Join One"
 						/>
-						<br />
-						<input type="submit" value="JOIN A GROUP" />
+						<div className='spacer'>
+							<Button variant="contained" color="secondary" type="submit" style={{ minWidth: '225px', minHeight: '40px', borderRadius: '15px' }}>Join</Button>
+						</div>
 					</form>
+
 				</div>
 				<h4 className='creategroup-prompt'>Need to plan a new trip? <a href='/creategroupform'>Create a group</a></h4>
 			</div>
