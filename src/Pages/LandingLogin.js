@@ -23,7 +23,7 @@ function Login() {
 	async function registerUser(event) {
 		event.preventDefault()
 
-		const response = await fetch('http://localhost:3001/api/register', {
+		const response = await fetch('http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/register', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ function Login() {
   	async function LoginUser(event) {
 		event.preventDefault()
 
-		const response = await fetch('http://localhost:3001/api/login', {
+		const response = await fetch('http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/login', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

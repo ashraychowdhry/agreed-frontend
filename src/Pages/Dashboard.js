@@ -17,7 +17,7 @@ const Dashboard = () => {
 	async function joinGroup(event) {
 		event.preventDefault()
 
-		const response = await fetch('http://localhost:3001/api/joingroup', {
+		const response = await fetch('http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/joingroup', {
 			method: "POST",
 			headers: {
 				'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ const Dashboard = () => {
 
 	async function populateDashboard() {
 		//localStorage.setItem("currentGroup", "")
-		const response = await fetch('http://localhost:3001/api/getusergroups', {
+		const response = await fetch('http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/getusergroups', {
 			method: "POST",
 			headers: {
 				'Content-Type': 'application/json',
