@@ -1,98 +1,70 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import Button from "@material-ui/core/Button";
+import AppContext from "./IndividualFormSteps/AppContext";
 
 const defaultValues = {
-    cvc: '',
-    expiry: '',
-    focus: '',
-    name: '',
-    number: '',
+  temp: '',
+  focus: '',
 }
 
 export default function CreditCard () {
-    const [formValues, setFormValues] = useState(defaultValues)
+  const myContext = useContext(AppContext);
+  const updateContext = myContext.userDetails;
+  const [formValues, setFormValues] = useState(defaultValues)
+
   
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormValues({
-          ...formValues,
-          [name]: value,
-        });
-    };
-
     const handleInputFocus = (e) => {
-        setFormValues ({
-            ...formValues,
-            focus: e.target.name 
-        });
+      setFormValues ({
+          ...formValues,
+          focus: e.target.name 
+      });
     };
-
-    async function handleSubmit(event) {
-        event.preventDefault();
-        console.log(formValues);
-        const response = await fetch('http://localhost:3001/api/creditcard', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				...formValues,
-			}),
-		})
-
-		const data = await response.json()
-
-		if (data.status === 'ok') {
-			alert("Success!")
-			window.location.href = "/dashboard"
-		} else {
-            console.log(data.status)
-			alert("Please fix the errors before continuing")
-		}
-    };
+    
+    const next = () => {
+        updateContext.setStep(updateContext.currentPage + 1)
+    }
 
     return (
       <div id="PaymentForm">
         <Cards
-          cvc={formValues.cvc}
-          expiry={formValues.expiry}
-          focused={formValues.focus}
-          name={formValues.name}
-          number={formValues.number}
+          cvc={updateContext.cvc}
+          expiry={updateContext.expiry}
+          focused={updateContext.focus}
+          name={updateContext.name}
+          number={updateContext.number}
         />
         <form>
         	<input
             type="text"
             name="name"
             placeholder="Card Name"
-            onChange={handleInputChange}
+            onChange={e => updateContext.setName(e.target.value)}
             onFocus={handleInputFocus}
           />
           <input
             type="tel"
             name="number"
             placeholder="Card Number"
-            onChange={handleInputChange}
+            onChange={e => updateContext.setNumber(e.target.value)}
             onFocus={handleInputFocus}
           />
           <input
             type="tel"
             name="expiry"
             placeholder="Expiry"
-            onChange={handleInputChange}
+            onChange={e => updateContext.setExpiry(e.target.value)}
             onFocus={handleInputFocus}
           />
           <input
             type="tel"
             name="cvc"
             placeholder="CVV"
-            onChange={handleInputChange}
+            onChange={e => updateContext.setcvc(e.target.value)}
             onFocus={handleInputFocus}
           />
-
-          <Button variant="contained" color="primary" type="submit" onClick={handleSubmit}> Submit </Button>
+          <Button variant="contained" color="primary" type="submit" onClick={next}> Next </Button>
         </form>
       </div>
     );
