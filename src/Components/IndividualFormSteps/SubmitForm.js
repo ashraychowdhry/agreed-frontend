@@ -21,6 +21,10 @@ export default function SubmitForm() {
     const departureTime = updateContext.departure
     const arriveOn = updateContext.arrivalDate
     const departOn = updateContext.departureDate
+    const cvc = updateContext.cvc
+    const expiry = updateContext.expiry
+    const name = updateContext.name
+    const number = updateContext.number
     const originAirport = updateContext.originAirport
 
     async function handleSubmit(event) {
@@ -42,9 +46,11 @@ export default function SubmitForm() {
                 groupID: currGroup,
                 arrival: arriveOn,
                 departure: departOn,
+                card_number: number,
+                expiration: expiry,
+                cvv: cvc,
+                cardholder_name: name,
                 originAirport: originAirport
-                
-
 			}),
 		})
 

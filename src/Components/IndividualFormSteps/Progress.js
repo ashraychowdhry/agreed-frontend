@@ -11,7 +11,7 @@ export default function Progress() {
     const background = {
         backgroundColor: '#dee2e6',
         height: 8,
-        width: 300,
+        width: 400,
         borderRadius: 20,
     }
 
@@ -29,7 +29,7 @@ export default function Progress() {
 
     return (
         <div>
-            <p style = {text}> {percentage} of 3 completed </p>
+            <p style = {text}> {percentage} of 4 completed </p>
                 <div style = {background}>
                     <div style = {progress} />
                 </div>
