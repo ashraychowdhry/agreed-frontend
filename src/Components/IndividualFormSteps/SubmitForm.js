@@ -26,6 +26,7 @@ export default function SubmitForm() {
     const name = updateContext.name
     const number = updateContext.number
     const originAirport = updateContext.originAirport
+    const tsaprecheck = updateContext.tsaprecheck
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -50,7 +51,8 @@ export default function SubmitForm() {
                 expiration: expiry,
                 cvv: cvc,
                 cardholder_name: name,
-                originAirport: originAirport
+                originAirport: originAirport,
+                tsa_precheck: tsaprecheck,
 			}),
 		})
 

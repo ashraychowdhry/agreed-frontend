@@ -7,6 +7,7 @@ import NavBar from '../Components/NavBar.js';
 import './dashboard.css';
 import TextField from '@mui/material/TextField';
 import { borders } from '@mui/system';
+import StripeContainer from '../Components/payments/StripeContainer';
 
 
 const Dashboard = () => {
@@ -72,6 +73,8 @@ const Dashboard = () => {
 	return (
 		<div className='dash-background'>
 			<NavBar/>
+			<br />
+			<br />
 			<div className='group'>
 
 				<h2 className='header'>Trip Dashboard</h2>

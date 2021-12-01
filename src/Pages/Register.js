@@ -8,6 +8,9 @@ function Register() {
   	const [lastName, setLastName] = useState('')
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
+	const [birthday, setBirthday] = useState('')
+	const [gender, setGender] = useState('')
+	const [age, setAge] = useState('')
 
   async function registerUser(event) {
 		event.preventDefault()
@@ -22,6 +25,9 @@ function Register() {
         		lastName,
 				email,
 				password,
+				birthday,
+				gender,
+				age
 			}),
 		})
 
@@ -64,6 +70,27 @@ function Register() {
 					onChange={(e) => setPassword(e.target.value)}
 					type="password"
 					placeholder="Password"
+				/>
+				<br />
+				<input
+					value={birthday}
+					onChange={(e) => setBirthday(e.target.value)}
+					type="text"
+					placeholder="DOB MM/DD/YYYY"
+				/>
+				<br />
+				<input
+					value={age}
+					onChange={(e) => setAge(e.target.value)}
+					type="text"
+					placeholder="Age"
+				/>
+				<br />
+				<input
+					value={gender}
+					onChange={(e) => setGender(e.target.value)}
+					type="text"
+					placeholder="Gender"
 				/>
 				<br />
 				<input type="submit" value="Register" />
