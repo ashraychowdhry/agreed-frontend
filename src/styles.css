@@ -12,9 +12,9 @@
 
 .box {
   position: relative;
-  width: 70%;
+  width: 800px;
   margin: 0 auto;
-  height: auto;
+  height: 580px;
   max-height: 70vh;
   margin-top: calc(100vh - 85vh - 20px);
   background: #fff;
@@ -26,17 +26,12 @@
 
 
 .close-icon {
-  content: 'x';
+  content: 'X';
   cursor: pointer;
   position: fixed;
-  right: calc(15% - 30px);
-  top: calc(100vh - 85vh - 33px);
-  background: #ededed;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  line-height: 20px;
+  right: 585px;
+  top: 125px;
   text-align: center;
-  border: 1px solid #999;
-  font-size: 20px;
+  font-size: 40px;
+  color: #94031e;
 }
