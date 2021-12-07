@@ -40,7 +40,7 @@ export default function AboutUs() {
     }
 
     return (
-        <div className='blueBG'>
+        <div className='aboutusBG'>
             <NavBar/>
             <div className="aboutMenuCard">
                 <h5 item style={{paddingTop: 20,
