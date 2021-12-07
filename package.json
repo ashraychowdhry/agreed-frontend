@@ -14,7 +14,7 @@
     "@mui/lab": "*",
     "@mui/material": "^5.1.1",
     "@stripe/react-stripe-js": "^1.6.0",
-    "@stripe/stripe-js": "^1.21.1",
+    "@stripe/stripe-js": "^1.21.2",
     "amadeus": "^5.7.1",
     "axios": "^0.24.0",
     "bootstrap": "^4.6.1",
