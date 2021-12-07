@@ -2,117 +2,115 @@
 @import url("https://use.typekit.net/ozp1nzr.css");
 
 .dash-background {
-    background-image: url("../assets/dashboard_background.png");
+  background-image: url("../assets/dashboard_background.png");
 
-    min-width: 100%;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: top;
-
-
+  min-width: 100%;
+  min-height: 150vh;
+  background-size: cover;
+  background-position: top;
 }
 
 .group {
-    display: table;
-    margin: 25px auto;
+  display: table;
+  margin: 25px auto;
 }
 
 .header {
-    font-family: mr-eaves-modern, sans-serif;
-    font-weight:700;
-    font-style: normal;
-    text-align: center;
-    letter-spacing: 2px;
-    font-size: 30pt;
-    color: #94031e;
+  font-family: mr-eaves-modern, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 30pt;
+  color: #94031e;
 }
 
 .header-user {
-    font-family: mr-eaves-modern, sans-serif;
-    font-weight:700;
-    font-style: normal;
-    text-align: center;
-    letter-spacing: 2px;
-    font-size: 20pt;
-    color: #000000;
-    margin-bottom: 50px;
+  font-family: mr-eaves-modern, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 20pt;
+  color: #000000;
+  margin-bottom: 50px;
 }
 
 .header-pin {
-    margin-top: 50px;
-    margin-bottom: 20px;
-    font-family: mr-eaves-modern, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: 1.5px;
-    font-size: 16pt;
-    color: #000000;
-    text-align: left;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-family: mr-eaves-modern, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1.5px;
+  font-size: 16pt;
+  color: #000000;
+  text-align: left;
 }
 
 .pin {
-    text-align: center;
+  text-align: center;
 }
 
 .creategroup-prompt {
-    font-family: mr-eaves-modern, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 16pt;
-    text-align: center;
-    letter-spacing: 1.5px;
-    padding-top: 20px;
+  font-family: mr-eaves-modern, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16pt;
+  text-align: center;
+  letter-spacing: 1.5px;
+  padding-top: 20px;
 }
 
 a[href*="/creategroupform"]:link,
 a[href*="/creategroupform"]:visited,
 a[href*="/creategroupform"]:hover,
 a[href*="/creategroupform"]:active {
-    text-decoration: none;
-    color: #94031e;
+  text-decoration: none;
+  color: #94031e;
 }
 
 .trip-cards {
-    margin-top: 100px;
-    margin-left: 50px;
-    margin-right: 50px;
+  margin-top: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .column {
-    padding: 20px 20px;
+  padding: 20px 20px;
 }
 
 .row {
-    margin: 50px auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .card {
-    color: #ffffff;
-    box-sizing: content-box;
-    width: 300px;
-    height: 200px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    text-align: center;
-    border-radius: 15px !important;
+  color: #ffffff;
+  box-sizing: content-box;
+  width: 300px;
+  height: 200px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  text-align: center;
+  border-radius: 15px !important;
 }
 
 .spacer {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .travel-pic {
-    background-image: url("../assets/travelpics/lake.jpg");
-    position: relative;
-    height: 180px;
-    width: 280px;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    background-size: cover;
-    background-position: center;
-    border-radius: 15px;
+  background-image: url("../assets/travelpics/lake.jpg");
+  position: relative;
+  height: 180px;
+  width: 280px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
 }
