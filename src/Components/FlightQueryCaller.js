@@ -194,7 +194,7 @@ export default function FlightQueryCaller(props) {
 
             <div>
 
-            <Button variant="contained" color="primary" href={'/confirmation'}>Book Now</Button>
+            <Button variant="contained" color="secondary" type="submit" style={{ minWidth: '225px', minHeight: '40px', borderRadius: '15px' }}>Book Now</Button>
             </div>
 
             </div>
