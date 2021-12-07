@@ -40,7 +40,7 @@ export default function FlightQueryCaller(props) {
       //-d "grant_type=client_credentials&client_id=rNzRVsibA4sB2mF5Gke4nLHO1Cyp4Nth&client_secret=u8ZpLQmH7r1OlwhA"
 
 
-    /*  
+    /*
       const authTokenResponse = await fetch('https://test.api.amadeus.com/v1/security/oauth2/token', {
 			method: "POST",
 			headers: {
@@ -130,7 +130,7 @@ export default function FlightQueryCaller(props) {
         query,
         {
           headers: {
-            'Authorization': 'Bearer TapT6iHQRhEExrn0MPRGRYjKvzTu'
+            'Authorization': 'Bearer 9y4eSKmACeDwBAyCFmAayxfC6gHp'
           }
         }
       );
@@ -161,6 +161,8 @@ export default function FlightQueryCaller(props) {
       return (JSON.stringify(response))
     }
   }
+
+ 
 
     return (
       <div style={{color: '#0A136C'}}>

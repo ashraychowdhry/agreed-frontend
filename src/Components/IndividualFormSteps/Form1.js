@@ -11,7 +11,7 @@ export default function Form1() {
     async function GetGroupData() {
         const currentGroup = localStorage.getItem("currentGroup")
 
-		const response = await fetch('http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/getgroupdata', {
+		const response = await fetch(' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/getgroupdata', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
