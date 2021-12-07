@@ -11,7 +11,13 @@ export default function Form1() {
     async function GetGroupData() {
         const currentGroup = localStorage.getItem("currentGroup")
 
-        const response = await fetch(' http://localhost:3001/api/getgroupdata', {
+        var fetchString = ''
+        if (localStorage.getItem('isLive') !== 'true') {
+          fetchString = 'http://localhost:3001/api/getgroupdata'
+        } else {
+          fetchString = ' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/getgroupdata'
+        }
+        const response = await fetch(fetchString, {
 		//const response = await fetch(' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/getgroupdata', {
 			method: 'POST',
 			headers: {

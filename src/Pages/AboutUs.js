@@ -10,7 +10,13 @@ import { faItalic } from '@fortawesome/free-solid-svg-icons';
 export default function AboutUs() {
     async function getData() {
 
-        const response = await fetch(' http://localhost:3001/api/getusergroups', {
+        var fetchString = ''
+        if (localStorage.getItem('isLive') !== 'true') {
+        fetchString = 'http://localhost:3001/api/getusergroups'
+      } else {
+        fetchString = ' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/getusergroups'
+      }
+      const response = await fetch(fetchString, {
         //const response = await fetch(' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/getusergroups', {
             method: 'GET',
             headers: {

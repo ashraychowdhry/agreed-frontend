@@ -15,7 +15,13 @@ function Login() {
 	async function registerUser(event) {
 	   event.preventDefault()
 
-	   const response = await fetch(' http://localhost:3001/api/register', {
+	   var fetchString = ''
+	   if (localStorage.getItem('isLive') !== 'true') {
+        fetchString = 'http://localhost:3001/register'
+      } else {
+        fetchString = ' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/register'
+      }
+      const response = await fetch(fetchString, {
 	   //const response = await fetch(' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/register', {
 		   method: 'POST',
 		   headers: {
@@ -43,7 +49,13 @@ function Login() {
 	async function LoginUser(event) {
 		event.preventDefault()
 
-		const response = await fetch(' http://localhost:3001/api/login', {
+		var fetchString = ''
+		if (localStorage.getItem('isLive') !== 'true') {
+        fetchString = 'http://localhost:3001/api/login'
+      } else {
+        fetchString = ' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/login'
+      }
+      const response = await fetch(fetchString, {
 		//const response = await fetch(' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/login', {
 			method: 'POST',
 			headers: {

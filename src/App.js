@@ -33,6 +33,7 @@ const abeona = createMuiTheme({
 
 const App = () => {
 
+    localStorage.setItem('isLive', 'false');
 
 	return (
 		<div>
