@@ -33,7 +33,9 @@ export default function SubmitForm() {
         console.log(details);
         var currGroup = localStorage.getItem('currentGroup');
         var currUser = localStorage.getItem('username');
-        const response = await fetch(' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/individualform', {
+
+        const response = await fetch(' http://localhost:3001/api/individualform', {
+        //const response = await fetch(' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/individualform', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

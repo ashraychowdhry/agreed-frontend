@@ -71,7 +71,8 @@ export default function FlightQueryCaller(props) {
 
 
 */
-      const groupUsers = await fetch(' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/getgroupusersforms', {
+      const groupUsers = await fetch(' http://localhost:3001/api/getgroupusersforms', {
+      //const groupUsers = await fetch(' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/getgroupusersforms', {
 			method: "POST",
 			headers: {
 				'Content-Type': 'application/json',
@@ -91,7 +92,8 @@ export default function FlightQueryCaller(props) {
 			alert('Please enter the right pin')
     }
 
-      const groupData = await fetch(' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/getgroup', {
+      const groupData = await fetch(' http://localhost:3001/api/getgroup', {
+      //const groupData = await fetch(' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/getgroup', {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
