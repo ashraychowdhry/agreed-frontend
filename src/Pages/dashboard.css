@@ -2,10 +2,12 @@
 @import url("https://use.typekit.net/ozp1nzr.css");
 
 .dash-background {
-    background-color: #efefef;
-    position: relative;
-    overflow: hidden;
-
+    background-image: url("../assets/dashboard_background.png");
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-position: center;
 }
 
 .group {
@@ -86,14 +88,14 @@ a[href*="/creategroupform"]:active {
 }
 
 .card {
+    color: #ffffff;
     box-sizing: content-box;
     width: 300px;
     height: 200px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
     padding: 16px;
     text-align: center;
-    background-color: #f1f1f1;
-    border-radius: 15px;
+    border-radius: 15px !important;
 }
 
 .spacer {

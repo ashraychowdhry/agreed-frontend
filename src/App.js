@@ -32,11 +32,11 @@ const abeona = createMuiTheme({
 
 
 const App = () => {
-    
+
 
 	return (
 		<div>
-            
+
 
       <ThemeProvider theme={abeona}>
 			<BrowserRouter>
