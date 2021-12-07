@@ -130,7 +130,7 @@ export default function FlightQueryCaller(props) {
         query,
         {
           headers: {
-            'Authorization': 'Bearer 9y4eSKmACeDwBAyCFmAayxfC6gHp'
+            'Authorization': 'Bearer 3Hn6jn1iIMgDsra1XKzCAZiiI7PB'
           }
         }
       );
