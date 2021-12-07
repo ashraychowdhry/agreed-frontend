@@ -1,0 +1,12 @@
+.confirm {
+    flex: 1;
+    flex-direction: row;
+    background-color: #efefef;
+    justify-content: center;
+    align-items: 'center';
+    height: 100vh;
+}
+
+.title {
+    padding-top: 50px;
+}
