@@ -9,6 +9,14 @@ function NavBar() {
 		localStorage.removeItem("token");
 	}
 
+  function renderLogout() {
+    if (localStorage.getItem("token") !== null) {
+      return (
+          <li><a href="/login" onClick={logout}>Log out</a></li>
+      )
+    }
+  }
+
     return (
 		<div className='navbar'>
             <div className='nav-left'>
@@ -18,7 +26,7 @@ function NavBar() {
     			<ul>
     				<li><a href="/dashboard">Dashboard</a></li>
     				<li><a href="/aboutus">About Us</a></li>
-                    <li><a href="/login" onClick={logout}>Log out</a></li>
+            {renderLogout()}
     			</ul>
             </div>
 		</div>
