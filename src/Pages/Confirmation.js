@@ -52,8 +52,11 @@ export default function Confirmation(props) {
         <div className='confirmbackground'>
             <div className='confirm'>
                 <NavBar/>
-                <h1 className='title'>Success! Your flights have been booked. Sit back and relax.</h1>
-                <div style={{position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)'}}>
+                <div style={{margin: '20px'}}>
+                    <h1 className='title'>Success! Your flights have been booked. Sit back and relax.</h1>
+                </div>
+                
+                <div style={{position: 'absolute', left: '50%', top: '60%', transform: 'translate(-50%, -50%)'}}>
                     {response.map((obj, i) => {
                       return (
                         <div>
