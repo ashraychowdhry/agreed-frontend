@@ -8,6 +8,12 @@ import { borders } from '@mui/system';
 import Button from '@material-ui/core/Button';
 
 function Login() {
+	function navigateRegister(event) {
+		navigate("/register");
+	}
+	function navigateAboutUs(event) {
+		navigate("/aboutus");
+	}
 	let navigate = useNavigate();
 	const [firstName, setFirstName] = useState('')
   	const [lastName, setLastName] = useState('')
@@ -105,47 +111,17 @@ function Login() {
 							<input
 								type="button"
 								value="Register"
-								onClick={togglePopup}
+								onClick={navigateRegister}
+								href="/register"
 							/>
-							{isOpen && <Popup
-								content={<>
-									<div className='registerPopup'>
-									    <h1 className='title'>Register to get started</h1>
-											<form onSubmit={registerUser}>
-												<TextField id="outlined-basic" label="First Name" variant="outlined" style={{ minWidth: '225px', borderRadius: '50px' }}
-													value={firstName}
-													onChange={(e) => setFirstName(e.target.value)}
-													type="text"
-													placeholder="First Name"
-												/>
-												<br />
-								        	    <TextField id="outlined-basic" label="Last Name" variant="outlined" style={{ margin: '10px auto', minWidth: '225px', borderRadius: '50px' }}
-													value={lastName}
-													onChange={(e) => setLastName(e.target.value)}
-													type="text"
-													placeholder="Last Name"
-												/>
-												<br />
-												<TextField id="outlined-basic" label="Email" variant="outlined" style={{ minWidth: '225px', borderRadius: '50px' }}
-													value={email}
-													onChange={(e) => setEmail(e.target.value)}
-													type="email"
-													placeholder="Email"
-												/>
-												<br />
-												<TextField id="outlined-basic" label="Password" variant="outlined" style={{ margin: '10px auto', minWidth: '225px', borderRadius: '50px' }}
-													value={password}
-													onChange={(e) => setPassword(e.target.value)}
-													type="password"
-													placeholder="Password"
-												/>
-												<br />
-												<Button variant="contained" color="secondary" type="submit" style={{ margin: '20px', minWidth: '225px', minHeight: '40px', borderRadius: '15px' }}>Register</Button>
-											</form>
-									</div>
-								</>}
-								handleClose={togglePopup}
-							/>}
+						</h4>
+						<h4>Want to learn more?
+							<input
+								type="button"
+								value="About Us"
+								onClick={navigateAboutUs}
+								href="/aboutus"
+							/>
 						</h4>
 					</div>
 			</form>
