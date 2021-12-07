@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import NavBar from '../Components/NavBar'
 import FlightResultCard from '../CustomUI/FlightResultCard'
 import Button from '@material-ui/core/Button';
-import './confirmation.css'
+import './confirm.css'
 import './landing.css'
 
 
@@ -55,7 +55,7 @@ export default function Confirmation(props) {
                 <div style={{margin: '20px'}}>
                     <h1 className='title'>Success! Your flights have been booked. Sit back and relax.</h1>
                 </div>
-                
+
                 <div style={{position: 'absolute', left: '50%', top: '60%', transform: 'translate(-50%, -50%)'}}>
                     {response.map((obj, i) => {
                       return (
