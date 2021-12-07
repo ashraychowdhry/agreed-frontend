@@ -21,7 +21,7 @@ function Register() {
   async function registerUser(event) {
 		event.preventDefault()
 
-		const response = await fetch(' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/register', {
+		const response = await fetch(' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/register', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
