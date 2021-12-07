@@ -19,7 +19,7 @@ export default function FlightQueryCaller(props) {
 
   //curl -X GET 'https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=ATL&destinationLocationCode=EWR&departureDate=2021-12-15&adults=1&nonStop=false&max=250' -H 'Authorization: Bearer WaQUBhIPoJpfg9CdiuWsZ8Tzj4Wz'
 
- 
+
     const [isLoaded, setIsLoaded] = useState(false);
     const [response, setResponse] = useState([]);
 
@@ -29,14 +29,14 @@ export default function FlightQueryCaller(props) {
 
     var groupID = localStorage.getItem('currentGroup');
 
-    
+
 
   useEffect(() => {
     const getData = async () => {
 
 
-      // curl "https://test.api.amadeus.com/v1/security/oauth2/token"      
-      //-H "Content-Type: application/x-www-form-urlencoded"      
+      // curl "https://test.api.amadeus.com/v1/security/oauth2/token"
+      //-H "Content-Type: application/x-www-form-urlencoded"
       //-d "grant_type=client_credentials&client_id=rNzRVsibA4sB2mF5Gke4nLHO1Cyp4Nth&client_secret=u8ZpLQmH7r1OlwhA"
 
 
@@ -44,7 +44,7 @@ export default function FlightQueryCaller(props) {
       const authTokenResponse = await fetch('https://test.api.amadeus.com/v1/security/oauth2/token', {
 			method: "POST",
 			headers: {
-				
+
         'Content-Type': 'application/x-www-form-urlencoded',
 			},
 			body: JSON.stringify({
@@ -68,7 +68,7 @@ export default function FlightQueryCaller(props) {
     var authToken = dataAuth.access_token
 
     var bearerKey = 'Bearer ' + authToken
-    
+
 
 */
       const groupUsers = await fetch(' https://cors-everywhere.herokuapp.com/http://ec2-35-171-158-190.compute-1.amazonaws.com:3001/api/getgroupusersforms', {
@@ -125,7 +125,7 @@ export default function FlightQueryCaller(props) {
 
 
       //https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=ATL&destinationLocationCode=EWR&departureDate=2021-12-15&adults=1&nonStop=true&currencyCode=USD&maxPrice=500&max=1
-      var query = "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=" + data1.userforms[i].originAirport + "&destinationLocationCode=" + destination + "&departureDate=" + data1.userforms[i].departure.substring(0,10) + "&adults=1&nonStop=true&currencyCode=USD&maxPrice=" + data1.userforms[i].budget + "&max=1" 
+      var query = "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=" + data1.userforms[i].originAirport + "&destinationLocationCode=" + destination + "&departureDate=" + data1.userforms[i].departure.substring(0,10) + "&adults=1&nonStop=true&currencyCode=USD&maxPrice=" + data1.userforms[i].budget + "&max=1"
       const data = await axios.get(
         query,
         {
@@ -150,7 +150,7 @@ export default function FlightQueryCaller(props) {
 
 
 
-    
+
     getData();
   }, [])
 
@@ -179,12 +179,12 @@ export default function FlightQueryCaller(props) {
                 <div>
 
                   <div className='group-list' key={i}>
-                    <FlightResultCard 
-                      personName={obj.userID} 
-                      departs={obj.flight.itineraries[0].segments[0].departure.at} 
-                      arrives={obj.flight.itineraries[0].segments[0].arrival.at} 
-                      startAirport={obj.flight.itineraries[0].segments[0].departure.iataCode} 
-                      endAirport={obj.flight.itineraries[0].segments[0].arrival.iataCode} 
+                    <FlightResultCard
+                      personName={obj.userID}
+                      departs={obj.flight.itineraries[0].segments[0].departure.at}
+                      arrives={obj.flight.itineraries[0].segments[0].arrival.at}
+                      startAirport={obj.flight.itineraries[0].segments[0].departure.iataCode}
+                      endAirport={obj.flight.itineraries[0].segments[0].arrival.iataCode}
                       flightPrice={obj.flight.price.total} />
                   </div>
 
@@ -193,10 +193,10 @@ export default function FlightQueryCaller(props) {
             })}
 
             <div>
-              
+
             <Button variant="contained" color="primary" href={'/confirmation'}>Book Now</Button>
             </div>
-            
+
             </div>
         </div>
         </div>
