@@ -6,3 +6,17 @@
     background-size: cover;
     background-position: center;
 }
+
+.flight-info {
+    font-family: mr-eaves-modern, sans-serif;
+    font-weight:600;
+    font-style: normal;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 14pt;
+    color: #94031e;
+}
+
+.group-list {
+    color: #94031e;
+}

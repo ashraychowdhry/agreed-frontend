@@ -191,10 +191,10 @@ export default function FlightQueryCaller(props) {
 
             {response.map((obj, i) => {
               return (
-                <div>
+                <div className='flight-info'>
 
-                  <div className='group-list' key={i}>
-                    <FlightResultCard
+                  <div className='group-list' key={i} style ={{color: '#94031e'}}>
+                    <FlightResultCard style = {{color: '#94031e'}}
                       personName={obj.userID}
                       departs={obj.flight.itineraries[0].segments[0].departure.at}
                       arrives={obj.flight.itineraries[0].segments[0].arrival.at}
@@ -209,7 +209,7 @@ export default function FlightQueryCaller(props) {
 
             <div>
 
-            <Button variant="contained" color="secondary" type="submit" style={{ minWidth: '225px', minHeight: '40px', borderRadius: '15px' }}>Book Now</Button>
+            <Button variant="contained" color="secondary" type="submit" style={{ minWidth: '225px', minHeight: '40px', borderRadius: '15px' }} href='/Confirmation'>Book Now</Button>
             </div>
 
             </div>
