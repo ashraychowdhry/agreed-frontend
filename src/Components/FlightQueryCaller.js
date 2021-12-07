@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-
+import './caller.css'
 import React, { useState, useEffect } from 'react'
 import Button from '@material-ui/core/Button';
 
@@ -164,10 +164,10 @@ export default function FlightQueryCaller(props) {
     }
   }
 
- 
+
 
     return (
-      <div style={{color: '#0A136C'}}>
+      <div className='caller'>
         <Navbar />
         <div style={{position: 'absolute', left: '50%', top: '50%',
         transform: 'translate(-50%, -50%)'}}>
@@ -196,7 +196,7 @@ export default function FlightQueryCaller(props) {
 
             <div>
 
-            <Button variant="contained" color="primary" href={'/confirmation'}>Book Now</Button>
+            <Button variant="contained" color="secondary" type="submit" style={{ minWidth: '225px', minHeight: '40px', borderRadius: '15px' }}>Book Now</Button>
             </div>
 
             </div>
